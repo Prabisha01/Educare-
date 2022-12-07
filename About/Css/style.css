@@ -2342,7 +2342,7 @@ textarea.form-control {
 }
 
 .btn:hover {
-  color: #666666;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -2366,34 +2366,34 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #17a2b8;
-  border-color: #17a2b8;
+  background-color: black;
+  border-color: #whitesmoke;
 }
 
 .btn-primary:hover {
-  color: #fff;
-  background-color: #138496;
-  border-color: #117a8b;
+  color:black;
+  background-color: whitesmoke;
+  border-color: #fff;
 }
 
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
-  background-color: #138496;
-  border-color: #117a8b;
-  box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
+  background-color: #fff;
+  border-color: black;
+  box-shadow: 0 0 0 0.2rem rgba(5, 176, 195, 0.5);
 }
 
 .btn-primary.disabled, .btn-primary:disabled {
   color: #fff;
   background-color: #17a2b8;
-  border-color: #17a2b8;
+  border-color: #fff;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #117a8b;
-  border-color: #10707f;
+  background-color: black;
+  border-color: #fff;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
@@ -2627,7 +2627,9 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #343a40;
   border-color: #343a40;
+
 }
+
 
 .btn-dark:hover {
   color: #fff;
@@ -6350,7 +6352,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #343a40 !important;
+  background-color: black !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -6360,27 +6362,27 @@ button.bg-primary:focus {
 }
 
 .bg-secondary {
-  background-color: #00394f !important;
+  background-color: black; !important;
 }
 
 a.bg-secondary:hover, a.bg-secondary:focus,
 button.bg-secondary:hover,
 button.bg-secondary:focus {
-  background-color: #00141c !important;
+  background-color: #fff !important;
 }
 
 .bg-success {
-  background-color: #28a745 !important;
+  background-color: #fff !important;
 }
 
 a.bg-success:hover, a.bg-success:focus,
 button.bg-success:hover,
 button.bg-success:focus {
-  background-color: #1e7e34 !important;
+  background-color: #fff !important;
 }
 
 .bg-info {
-  background-color: #17a2b8 !important;
+  background-color: #fff !important;
 }
 
 a.bg-info:hover, a.bg-info:focus,
@@ -6518,7 +6520,7 @@ button.bg-dark:focus {
 }
 
 .rounded {
-  border-radius: 5px !important;
+  border-radius: px !important;
 }
 
 .rounded-top {
