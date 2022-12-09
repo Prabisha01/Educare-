@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
+  <title>Document</title>
+  <link rel="stylesheet" href="Login.css">
+  
 </head>
+
 <body>
   <div class="nav">
     <h1>
@@ -29,25 +32,26 @@
 
         <div class="formGroup">
           <label for="">Username</label>
-          <input type="text" required>
+          <input type="text" class="Username" placeholder="Username" required>
         </div>
     
         <div class="formGroup">
           <label for="">Password</label>
-          <input type="password" required>
+          <input type="password" placeholder="******"  required>
         </div>
           
         <input type="checkbox" id="check">
         <p class="condition">Remember me!</p>
 
         <div class="for-signin">
-        <a href="#" class="login-btn">Log In</a>
+        <a href="#" class="login-btn"><button onclick="button"> LogIn</button></a>
+        <!-- <button onclick="button" class="b1"> Login</button> -->
       </div>
 
       <div class="already">
-        <p>forgot password?</p>
+        <p><a href ="#">forgot password?</a></p>
       </div>
-        </form>
+    </form>
       </div>
   </div>
  
