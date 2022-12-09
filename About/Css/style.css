@@ -999,6 +999,8 @@ pre code {
   .offset-sm-2 {
     margin-left: 16.66667%;
   }
+
+
   .offset-sm-3 {
     margin-left: 25%;
   }
@@ -4011,6 +4013,17 @@ input[type="button"].btn-block {
   margin-bottom: 0;
   list-style: none;
 }
+.topnav input[type=text] {
+  float: left;
+  padding: 3px;
+  border: black;
+  margin-top: 30px;
+  margin-right: 100px;
+  font-size: 18px;
+  background-color: lightgrey;
+}
+
+
 
 .nav-link {
   display: block;
@@ -9859,4 +9872,37 @@ a.text-dark:hover, a.text-dark:focus {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+
+/*Notification*/
+
+.notification {
+
+
+  color: white;
+  text-decoration: none;
+  padding: 4px 11px;
+  position: absolute;
+  display: inline-block;
+  border-radius: 10px;
+  background-color:black;
+  
+  font-size:23;
+
+}
+
+.notification:hover {
+  background: white;
+
+}
+
+.notification .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: red;
+  color: white;
 }
