@@ -1,126 +1,16 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  .nav {
-    width: 100%;
-    box-shadow: 0 0px 1px #636363;
-    margin-left: 10px;
-  }
+.my-sostum-clas{
+    font-family: 'Times New Roman', Times, serif;
+}
+.mycustom{
+  font-weight: bold;
 
-  .nav h1 {
-    padding: 9px 12px;
-  }
-  .main-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-  }
+}
+.mycustom1{
+  font-weight: bold;
+  font-size: 2rem;
 
-  .main-container .left-section {
-    width: 55%;
-    box-shadow: 0 0 1px #000000;
-    margin-left: 10px;
-  }
+}
 
-  .main-container .left-section img {
-    background-size: cover;
-    background-position: center;
-  }
-
-  .main-container .right-section {
-    width: 45%;
-    padding: 10px;
-    margin-left: 45px;
-  }
-
-  .main-container .right-section h1 {
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  form {
-    margin-top: 20px;
-    margin-left: 110px;
-  }
-
- 
-
-  .right-section .first {
-    display: inline-block;
-    margin-right: 90px;
-  }
-
-  .right-section label {
-    display: block;
-    font-size: 16px;
-    font-weight: 550;
-    padding: 5px;
-  }
-  
-  .right-section .first input,
-  .right-section .second input {
-    padding: 10px;
-    border: 1px solid;
-    border-radius: 4px;
-    margin-bottom: 12px;
-  }
-
-  .right-section .second {
-    display: inline-block;
-  }
-
-
-  .right-section .formGroup input{
-    width: 82.5%;
-    padding: 10px;
-    border: 1px solid;
-    border-radius: 4px;
-    margin-bottom: 12px;
-  }
-
-  #check {
-    display: inline-block;
-    margin-right: 14px;
-  }
-
-  .condition {
-    display: inline-block;
-    font-size: 17px;
-    vertical-align: bottom;
-    margin-top: 10px;
-    letter-spacing: 0.1rem;
-  }
-
-  .condition span {
-    display: block;
-  }
-
-
- .for-signup {
-  text-align: center;
-  padding: 1.8rem;
- }
-
- .for-signup .signup-btn {
-  border: 1px solid;
-  padding: 10px 18px;
-  font-size: 18px;
-  color: white;
-  background-color: #000000;
- }
-
- .already {
-  text-align: center;
- }
-
- form .already p {
-  display: inline-block;
-  text-align: center;
- }
-
- form a {
-  font-size: 18px;
- }
+.customclas{
+    box-shadow: 0px 15px 10px -15px #111;
+}
