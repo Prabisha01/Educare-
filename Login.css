@@ -108,6 +108,7 @@
   margin-left: 40%;
   margin-top: 0%;
  }
+
  
 
 #check{
@@ -147,12 +148,17 @@ font-size: 20px;
 text-transform: capitalize;
 font-size: 17px;
 } 
- @media screen and (max-width:1500),(min-width:500){
+ /* @media screen and (max-width:1500),(min-width:500){
   .nav{
 		flex-direction: row;
 		height: 50vh;
   }
   .left-section.img  {
     display: none;
-}
+} */
+@media screen and (max-width:700){
+  .main-container.left-section{
+
+  }
+  
 }
