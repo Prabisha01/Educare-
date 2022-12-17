@@ -9929,8 +9929,8 @@ a.text-dark:hover, a.text-dark:focus {
 
 
 
-.checked {
-  color: red;
+.checked{
+  color: darkgoldenrod;
 
 }
 
@@ -9943,7 +9943,6 @@ a.text-dark:hover, a.text-dark:focus {
   border-radius: 50%;
   background-color: whitesmoke;
  font-style: initial;
-
 }
 .Start{
   height: 1000px;
@@ -9952,6 +9951,8 @@ a.text-dark:hover, a.text-dark:focus {
   left: 100;
   
 }
+
+ 
 
 .Video{
   margin-left: 2;
