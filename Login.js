@@ -1,9 +1,18 @@
-// Get the modal
-var modal = document.getElementById('id01');
+function submit()
+{
+    let user=document.getElementById("user").value;
+    let pws=document.getElementById("pws").value;
+    let logged=document.getElementById("loggedin");
+// var user=document.getElementById("user").nodeValue;
+// var pws=document.getElementById("pws").nodeValue;
+    if(username=="admin" && password=="pass" ){
+        alert("login succesfull");
+    }
+    else{
+        alert("login unsuccessfull")
+    }
+    
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+    alert("Incorrect UserID or Password")
 }
+

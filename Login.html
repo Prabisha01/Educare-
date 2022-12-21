@@ -31,19 +31,20 @@
 
         <div class="formGroup">
           <label for="">Username</label>
-          <input type="text" class="Username" placeholder="Username" required>
+          <input id ="user" type="text" class="Username" placeholder="Username" required>
         </div>
     
         <div class="formGroup">
           <label for="">Password</label>
-          <input type="password" placeholder="******"  required>
+          <input id ="pws" type="password"  placeholder="******" required   >
         </div>
 
         <input type="checkbox" id="check">
         <p class="condition">Remember me!</p>
         
          <div class="for-signin">
-          <button onclick="button" class="b1"> Login</button>
+          <button id ="b1" onclick="submit()" class="b1" autofocus > Login</button>
+          
         </div> 
          
          <div class="already">
@@ -61,3 +62,11 @@
  
 </body>
 </html>
+  <label>User Name </label>
+            <input id="user" type="text" placeholder="Enter Login"/>
+            <br>
+            <label> User Name</label>
+            <input id="pwd" type="password" placeholder="Enter login">
+            <br>
+            <button id="btnSubmit" onclick="submit()"> Submit</button>
+            
