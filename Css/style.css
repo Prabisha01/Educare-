@@ -10003,5 +10003,47 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 
+.btn-primary1 {
+  color: #fff;
+  background-color: green;
+  border-color: #whitesmoke;
+}
+
+.btn-primary2 {
+  color: #fff;
+  background-color: black;
+  border-color: #whitesmoke;
+}
+
+.btn-primary3 {
+  color: #fff;
+  background-color: red;
+  border-color: #whitesmoke;
+}
+
+
+.btn-primary1:hover {
+  color:black;
+  background-color: whitesmoke;
+  border-color: #fff;
+}
+
+.btn-primary2:hover {
+  color:black;
+  background-color: whitesmoke;
+  border-color: #fff;
+}
+.btn-primary3:hover {
+  color:black;
+  background-color: whitesmoke;
+  border-color: #fff;
+}
+
+
+
+
+
+
+
 
 
