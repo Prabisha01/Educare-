@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login123</title>
-  <link rel="stylesheet" href="Login.css">
-  <script src="Login.js"></script>
+  <link rel="stylesheet" href="C:\New folder\Educare-\Static\css\Login.css">
+  <script src="C:\New folder\Educare-\Static\javascript\Login.js"></script>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
   <div class="main-container">
 
     <div class="left-section">
-      <img class="loginimg" src="Login.png" alt="">
+      <img class="loginimg" src="C:\New folder\Educare-\Static\images\Login.png" alt="">
     </div>
 
       <div class="right-section">
@@ -31,12 +31,12 @@
 
         <div class="formGroup">
           <label for="">Username</label>
-          <input id ="user" type="text" class="Username" placeholder="Username" required>
+          <input id ="user" type="text" onsubmit="return validateForm()" class="Username" placeholder="Username" required>
         </div>
     
         <div class="formGroup">
           <label for="">Password</label>
-          <input id ="pws" type="password"  placeholder="******" required   >
+          <input id ="pws"  type="password" onsubmit="return validateForm()"  placeholder="******" required>
         </div>
 
         <input type="checkbox" id="check">
@@ -50,23 +50,10 @@
          <div class="already">
           <!-- <p><a href ="#">Forget Password ?</a></p> -->
           <a href="#">Forgot Password?</a>
-        </div>
-
-       
-     
-      
-      
+        </div> 
     </form>
       </div>
   </div>
  
 </body>
 </html>
-  <label>User Name </label>
-            <input id="user" type="text" placeholder="Enter Login"/>
-            <br>
-            <label> User Name</label>
-            <input id="pwd" type="password" placeholder="Enter login">
-            <br>
-            <button id="btnSubmit" onclick="submit()"> Submit</button>
-            

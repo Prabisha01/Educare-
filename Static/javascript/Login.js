@@ -16,3 +16,10 @@ function submit()
     alert("Incorrect UserID or Password")
 }
 
+function validateForm() {
+    var x = document.forms["user"][""].value;
+    if (x == "") {
+      alert("Name must be filled out");
+      return false;
+    }
+  }
