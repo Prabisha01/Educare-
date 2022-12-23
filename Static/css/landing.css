@@ -239,6 +239,15 @@ nav .navbar li a:hover{
     padding: 5px 15px;
     display: block;
 }
+.UserGuide{
+    font-size: 16px;
+    color: white;
+    background-color: #317193;
+    border: 1px solid #317193;
+    border-radius: 1000px;
+    padding: 5px 15px;
+    display: block;
+}
 
 /* section 3 */
 .with-edu{
