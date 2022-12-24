@@ -28,8 +28,10 @@ function UpdateData() {
       });  
 } 
 
+
 // To add new course
-<button onClick="InsertData()">Insert Data</button>  
+
+// <button onClick="InsertData()">Insert Data</button>  
   
 function InsertData() {  
       var insertStatement = "insert into Emp (firstName, lastName,city,state,phone,email) values (?, ?, ?,?,?,?)";  

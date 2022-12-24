@@ -6,13 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="../Static/css/dashboard.css">
+    <link rel="stylesheet" href="../Static/css/style.css">
   
 </head>
 
 <body>
-    <div>  
-    <h1>Insert Data, Update Data and Delete Data In HTML5</h1>  
+    <div class="AddTeams">  
     <input type="hidden" id="id" />  
     <b>First name:</b><input type="text" id="firstName" /><br />  
     <b>Last name:</b><input type="text" id="lastName" /><br />  
@@ -28,6 +27,19 @@
     <br />  
     <br />  
     <div id="details"></div>  
-</div> 
+
+
+<script>  
+    var id = document.getElementById('id');  
+    var firstName = document.getElementById('firstName');  
+    var city = document.getElementById('city');  
+    var state = document.getElementById('state');  
+    var email = document.getElementById('email');  
+    var lastName = document.getElementById('lastName');  
+    var phone = document.getElementById('phone');  
+    var results = document.getElementById('details');  
+</script> 
+</div>
+
 </body>
 </html>
