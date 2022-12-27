@@ -1,25 +1,13 @@
-function submit()
+function validate()
 {
-    let user=document.getElementById("user").value;
-    let pws=document.getElementById("pws").value;
-    let logged=document.getElementById("loggedin");
-// var user=document.getElementById("user").nodeValue;
-// var pws=document.getElementById("pws").nodeValue;
-    if(username=="admin" && password=="pass" ){
+var username=document.getElementById("user").value;
+var password=document.getElementById("pws").value;
+    if(username=="admin" && password=="admin" ){
+      window.location.assign("homepage.html");
         alert("login succesfull");
+      
     }
     else{
-        alert("login unsuccessfull")
+        alert("Incorrect UserID or Password");
     }
-    
-
-    alert("Incorrect UserID or Password")
 }
-
-function validateForm() {
-    var x = document.forms["user"][""].value;
-    if (x == "") {
-      alert("Name must be filled out");
-      return false;
-    }
-  }

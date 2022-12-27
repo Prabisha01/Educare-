@@ -88,7 +88,7 @@
 #check {
   display: inline-block;
   margin-right: 10px;
-  margin-left: 0px;
+  margin-left: -10px;
   text-align: left;
   
 }
