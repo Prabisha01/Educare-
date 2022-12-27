@@ -20,7 +20,8 @@ hr {
   margin-left:0; */
 }
 h1{
-    margin: 12px;
+  
+  margin: 25px;
 }
 .container {
   max-width: 800px; 
@@ -31,6 +32,7 @@ h1{
 }
 .productcont {
   display: flex; 
+  justify-content: center;
 }
 .product {
   padding:1em; 
