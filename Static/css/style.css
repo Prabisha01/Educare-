@@ -10041,10 +10041,16 @@ a.text-dark:hover, a.text-dark:focus {
 
 
 .AddTeams{
- width: 600px;
+ width: 900px;
   border: 15px solid black;
   padding: 50px;
-  margin: 45px;
+  margin:150px;
+
+
+}
+
+.rome{
+  margin: 90px;
 }
 
 
