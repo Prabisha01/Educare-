@@ -2,15 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../Static/css/promocode.css" />
-    <title>Promo Code</title>
-    <script src="../Static/javascript/promocode.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/promocode.css" />
   </head>
   <body>
-    <h1>promocode</h1>
-    <input type="text" placeholder="Enter the promocode" id="promocode">
-    <button class="btn" id="promo" onclick="promo()">Apply</button>
-   
+    <button class="get-discount-btn">Get Discount</button>
+
+    <div class="coupon-container">
+      <div class="close">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </div>
+
+      <img class="bg" src="images/bg.svg" alt="" />
+
+      <img class="gift" src="images/gift.svg" alt="" />
+
+      <h2>Congratulations!</h2>
+      <p>You can get</p>
+      <div class="discount">75% off</div>
+      <p>Here is your code</p>
+      <div class="code">LBSAVE75</div>
+      <a href="#" class="btn">Redeem</a>
+    </div>
+
+    <script src="../static/javascript/promocode.js"></script>
   </body>
 </html>
