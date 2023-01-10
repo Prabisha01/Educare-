@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
 
+
 }
 body{
     margin: 0%;
@@ -10,7 +11,6 @@ body{
     max-width: 1200px;
     margin: 0 auto;
 
-    /* nav */
 }
 nav{
     display: flex;
@@ -19,7 +19,7 @@ nav{
     padding: 15px 40px 15px 40px;
     box-shadow: 2px 2px 10px rgb(0, 0, 0, 0.1);
     align-items: center;
-} 
+}
 
 nav img{
     height: 40px;
@@ -66,7 +66,7 @@ nav .navbar{
     grid-gap: 60px;
 }
 nav .navbar li{
-    
+
 }
 nav .navbar li a{
     color: #060537;
@@ -74,15 +74,6 @@ nav .navbar li a{
 nav .navbar li a:hover{
     color: #317193;
 }
-
-/* .search-box {
-    font-size: 16px;
-    padding: 0 0 0 10px;
-    width: 621px;
-    height: 40px;
-} */
-
-/* section banner */
 
 .banner{
     background-color: #F2F0EF;
@@ -97,18 +88,28 @@ nav .navbar li a:hover{
     padding: 0 40px 0 120px;
     width: 46%;
 }
+.UserGuide{
+    display : inline-block;
+    padding: 8px 15px;
+    color: white;
+    margin-right: 30%;
+    margin-botton: 40%;
+    background-color: #7d8ee0;
+    text-decoration: none;
+    border-radius: 10px;
+}
 .banner .content h3{
     font-size: 40px;
     font-weight: 900;
 }
 .banner .content h3 span{
-   color: #D90606;
+    color: #D90606;
 }
 .banner .content p{
     margin: 0%;
     font-size: 20px;
-    
-    
+
+
 }
 
 .banner .img {
@@ -146,22 +147,21 @@ nav .navbar li a:hover{
     margin-bottom: 40px;
 }
 .courses-content{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     grid-gap: 30px;
 }
 
 .courses .courses-content .item{
     background-color: white;
     padding: 30px;
-    width: 26.6%;
     box-shadow: 0px 5px 8px 5px rgb(0 0 0 / 15%);
     transition: all 0.2s ease-in-out;
 }
 .courses .courses-content .item:hover{
     box-shadow: 0px 30px 30px 5px rgb(0 0 0 / 15%);
     margin-top: -10px;
-    
+
 }
 .courses .courses-content .item .tag{
     display: block;
@@ -171,7 +171,7 @@ nav .navbar li a:hover{
     text-decoration: none;
     color: black;
     font-size: 20px;
-    
+
 }
 .courses .courses-content .item a h4{
     margin: 0 0 10px;
@@ -199,7 +199,7 @@ nav .navbar li a:hover{
     grid-gap: 100px;
     align-items: center;
     justify-content: space-between;
-    
+
 }
 .beginner-welcome .img{
     width: 105%;
@@ -217,7 +217,7 @@ nav .navbar li a:hover{
 
 .beginner-welcome .content p{
     color: white;
-    
+
 }
 
 /* .beginner-welcome .join-free a{
@@ -231,15 +231,6 @@ nav .navbar li a:hover{
     margin: 50px 0 0;
 }
 .join-free{
-    font-size: 16px;
-    color: white;
-    background-color: #317193;
-    border: 1px solid #317193;
-    border-radius: 1000px;
-    padding: 5px 15px;
-    display: block;
-}
-.UserGuide{
     font-size: 16px;
     color: white;
     background-color: #317193;
@@ -283,150 +274,127 @@ nav .navbar li a:hover{
 
 /* footer */
 footer{
-    background-color: #060537;
-    padding: 70px 0;
-}
-
-footer .container{
-    max-width: 1170px;
-    
-    margin: auto;
-}
-.row{
-    display: flex;
-    flex-wrap: wrap;
-
-}
-ul{
-    list-style: none;
-}
-.footer-col{
-    width: 25%;
-    padding: 0 15px;
-}
-.footer-col h4{
-    font-size: 18px;
-    color: white;
-    text-transform: capitalize;
-    margin-bottom: 30px;
-    font-weight: 500;
     position: relative;
+    bottom: 0px;
+    width: 100%;
+    background: #111;
+    color: white;
+    padding: 50px 100px;
 }
-.footer-col ul li:not(:last-child){
-    margin-bottom: 10px;
+.main-content{
+    display: flex;
+}
+.main-content .box{
+    flex-basis: 50%;
+    padding: 10px, 20px;
+}
+.box h2{
+    color: #17a2b8;
+    font-size: 30px;
 
+    font-family: "Handlee", cursive;
 }
-.footer-col ul li a{
-    font-size: 16px;
-    text-transform: capitalize;
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 300;
-    color: #bbbbbb;
-    display: block;
-    transition: all 0.3s ease;
+.box .content{
+    margin: 20px 0 0 0;
 }
-
-.footer-col ul li a:hover{
-    color: #ffffff;
-    padding-left: 10px;
+.left .content .social{
+    margin: 20px 0 0 0;
 }
-@media(max-width: 767px){
-    .footer-col{
-        width: 50%;
-        margin-bottom: 30px;
-    }
-}
-@media(max-width: 574px){
-    .footer-col{
-        width: 100%;
-        
-    }
+.left .content .social a span{
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    background-color: white;
+    text-align: center;
+    border-radius: 20px;
 }
 
+.right-box .quicklink h2 ul li{
+    display: flex;
+    color: white;
+}
 
-
-
+/* footer end  */
 /* QUIZ CSS  */
 
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 body {
-	font-family: 'Montserrat', sans-serif;
-	line-height: 1.6;
-	margin: 0;
-	min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    min-height: 100vh;
 }
 ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 
 h2,
 h3,
 a {
-	color: #34495e;
+    color: #34495e;
 }
 
 a {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 
 
 .logo {
-	margin: 0;
-	font-size: 1.45em;
+    margin: 0;
+    font-size: 1.45em;
 }
 
 .main-nav {
-	margin-top: 5px;
+    margin-top: 5px;
 
 }
 .logo a,
 .main-nav a {
-	padding: 10px 15px;
-	text-transform: uppercase;
-	text-align: center;
-	display: block;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
 }
 
 .main-nav a {
-	color: #34495e;
-	font-size: .99em;
+    color: #34495e;
+    font-size: .99em;
 }
 
 .main-nav a:hover {
-	color: #718daa;
+    color: #718daa;
 }
 
 
 
 .header {
-	padding-top: .5em;
-	padding-bottom: .5em;
-	border: 1px solid #a2a2a2;
-	background-color: #f4f4f4;
-	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
-	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    border: 1px solid #a2a2a2;
+    background-color: #f4f4f4;
+    -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 
-/* ================================= 
+/* =================================
   Media Queries
 ==================================== */
 
 
 
 
-@media (min-width: 769px) {
+/* @media (min-width: 769px) {
 	.header,
 	.main-nav {
 		display: flex;
@@ -449,20 +417,7 @@ a {
 		justify-content: space-between;
 	}
 
-}
-
-
-
-
-
-
-
-
-
-
-
-                        
-
+} */
 
 
 
