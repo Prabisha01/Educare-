@@ -12,9 +12,23 @@
             crossorigin="anonymous"
 
     />
-    <link rel="stylesheet" th:href="{~/css/Login.css}">
+    <link rel="stylesheet" th:href="@{~/css/Login.css}">
+    <style>.my-sostum-clas{
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .mycustom{
+        font-weight: bold;
 
-    </style>
+    }
+    .mycustom1{
+        font-weight: bold;
+        font-size: 2rem;
+
+    }
+
+    .customclas{
+        box-shadow: 0px 15px 10px -15px #111;
+    }</style>
 </head>
 <body>
 
@@ -24,7 +38,7 @@
         <div class="col-lg-6 col-md-6  col-sm-6 col-xs-12 col-xl-6 col-xxl-4 customclas pt-0 ps-0 pb-0 pe-0">
 
             <img
-                    src="../Static/images/Login.png"
+                    th:src="@{~/images/login.png}"
                     class="img-fluid w-100 h-100 ps-0 m-0 "
                     alt="Responsive image" />
 
@@ -33,16 +47,16 @@
             <h1 class="d-grid text-center  pt-2 pb-2">Sign in</h1>
             <div class=" mycustom d-flex justify-content-around  ">
 
-                <form class=" " >
+                <form th:method="post" th:action="@{/login}" >
                     <div class="row  p-0 m-0  ">
                         <div class="col-xl-12 form-group ">
                             <label class="pb-2 pt-2" >Username</label>
-                            <input type="text" class="form-control " placeholder="Username" required >
+                            <input type="text" class="form-control " placeholder="Username"  name ="username" required >
                         </div>
                         <div class="col-xl-12 form-group ">
                             <div class="form-group">
                                 <label class="pb-2 pt-2">Password</label>
-                                <input type="password" class="form-control " placeholder="********" required >
+                                <input type="password" class="form-control " placeholder="********"  name = "password" required >
                             </div>
                         </div>
 
@@ -62,10 +76,10 @@
                             <button>Login</button>
                         </div>
                         <div class="text-center ">
-                            <a href="Login.html">Forget password?</a>
+                            <a href="#">Forget password?</a>
                         </div>
                         <div class="text-center ">
-                            Doesn't have an account?<a href="Signup.html">Signup</a>
+                            Doesn't have an account?<a href="signup.html">Signup</a>
                         </div>
 
 

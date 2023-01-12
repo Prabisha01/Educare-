@@ -58,18 +58,14 @@ public class UserController {
         return "redirect:/user/list"; // router ko path
     }
 
-//    @GetMapping("/login")
-//    public String login() {
-//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//        if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
-//            return "login";
-//        }
-//        return "redirect:/home";
-//    }
-
     @GetMapping("/login")
-    public String getLoginPage() {
-        return ("login");
+    public String login() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+            return "login";
+        }
+        return "redirect:/landing";
+
 
 
     }
