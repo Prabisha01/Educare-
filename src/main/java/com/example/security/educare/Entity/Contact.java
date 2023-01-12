@@ -4,10 +4,12 @@ package com.example.security.educare.Entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name="contact")
@@ -29,17 +31,17 @@ public class Contact {
     @Column(name = "message")
     private String message;
 
-    public Contact(int id, String fullname, String email, String subject, String message) {
-        super();
-        this.id = id;
-        this.fullname = fullname;
-        this.email = email;
-        this.subject = subject;
-        this.message = message;
-    }
-        public Contact() {
-            super();
-    }
+//    public Contact(int id, String fullname, String email, String subject, String message) {
+//        super();
+//        this.id = id;
+//        this.fullname = fullname;
+//        this.email = email;
+//        this.subject = subject;
+//        this.message = message;
+//    }
+//        public Contact() {
+//            super();
+//    }
 
     public Integer getId() {
         return id;

@@ -1,4 +1,4 @@
-package com.example.security.educare.UserPojo;
+package com.example.security.educare.Pojo;
 
 
 import com.example.security.educare.Entity.Contact;
