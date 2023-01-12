@@ -1,7 +1,9 @@
 
     package com.example.security.educare.Services.Impl;
 
+    import com.example.security.educare.Entity.Contact;
     import com.example.security.educare.Entity.User;
+    import com.example.security.educare.Pojo.ContactPojo;
     import com.example.security.educare.Repo.ContactRepo;
     import com.example.security.educare.Repo.UserRepo;
     import com.example.security.educare.Services.UserService;
@@ -51,6 +53,18 @@
         }
 
         @Override
+        public String submitMsg(ContactPojo contactPojo) {
+            Contact contact = new Contact();
+            contact.setFullname(contactPojo.getFullname());
+            contact.setEmail(contactPojo.getEmail());
+            contact.setSubject(contactPojo.getSubject());
+            contact.setMessage(contactPojo.getMessage());
+            contactRepo.save(contact);
+            return "submit";
+        }
+
+
+        @Override
         public void deleteById(Integer id) {
             userRepo.deleteById(id);
         }
@@ -61,18 +75,8 @@
                     .orElseThrow(() -> new AppException("Invalid User email", HttpStatus.BAD_REQUEST));
             return new UserPojo(user);
         }
+
     }
-
-
-//        @Override
-//        public String sendMsg(ContactPojo contactPojo) {
-//            Contact contact=new Contact();
-//            contact.setFullname(contactPojo.getFullname());
-//            contact.setEmail(contactPojo.getEmail());
-//            contact.setSubject(contactPojo.getSubject());
-//            contact.setMessage(contactPojo.getMessage());
-//            contactRepo.save(contact);
-//            return "submit";
 
 
 

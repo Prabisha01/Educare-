@@ -1,5 +1,6 @@
 package com.example.security.educare.Controller;
 import com.example.security.educare.Entity.User;
+import com.example.security.educare.Pojo.ContactPojo;
 import com.example.security.educare.Services.UserService;
 
 import com.example.security.educare.Pojo.UserPojo;
@@ -67,9 +68,21 @@ public class UserController {
         return "redirect:/landing";
 
 
+        }
+        @GetMapping("/contact")
+        public String getPage( Model model){
+            model.addAttribute("contact", new ContactPojo());
+            return "Contact";
+        }
+
+        @PostMapping("/send-message")
+        public String submitMessage(@Valid ContactPojo contactPojo){
+            userService.submitMsg(contactPojo);
+            return "redirect:contact";
+        }
+
 
     }
-}
 
 
 
