@@ -23,14 +23,14 @@ public interface UserService {
     String submitMsg(ContactPojo contactPojo);
     void deleteById(Integer id);
 
-    UserPojo findByUserName(String email);
 
+
+    User findByEmail(String email);
     String save(BlogPojo blogPojo);
 
 
     String save(FaqPojo faqPojo);
 
-    UserPojo findByEmail(String email);
 
     UserPojo findByPassword(String password);
 
@@ -38,4 +38,10 @@ public interface UserService {
 
     Contact CfetchById(Integer id);
     void CdeleteById(Integer id);
+
+    void processPasswordResetRequest(String email);
+
+    void sendEmail();
+
+    String updateResetPassword(String email);
 }
