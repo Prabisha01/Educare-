@@ -33,10 +33,11 @@ public class homepageController {
     public String getGuide() {
         return "userguide";
     }
+
     @GetMapping("/viewBlog")
     public String viewUserBlog(Model model) {
         model.addAttribute("blog", new BlogPojo());
-        return "blog";
+        return "redirect:/blog/list";
     }
 
     @GetMapping("/course")

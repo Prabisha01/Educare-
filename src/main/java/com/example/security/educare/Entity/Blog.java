@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import jdk.jshell.Snippet;
 import lombok.*;
 
+import java.sql.Date;
+
 @Builder
 @Getter
 @Setter
@@ -24,11 +26,11 @@ public class Blog {
     private String title;
 
     @Column(name = "date")
-    private String date;
-
+    private Date date;
 
     @Column(name = "content")
     private String content;
+
 
     public String image;
 

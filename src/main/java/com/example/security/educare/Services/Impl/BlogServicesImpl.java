@@ -19,27 +19,24 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BlogServicesImpl implements BlogServices {
     private final BlogRepo blogRepo;
-    public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/FinalEducareProject/educareimage/";
+    public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/educareimage/";
 
 
     @Override
-    public BlogPojo save(BlogPojo blogPojo) throws IOException {
-        Blog blog;
+    public BlogPojo saveBlog(BlogPojo blogPojo) throws IOException {
+        Blog blog = new Blog();
         if (blogPojo.getId() != null) {
-            blog = blogRepo.findById(blogPojo.getId()).orElseThrow(() -> new RuntimeException("Not Found"));
-        } else {
-            blog = new Blog();
+            blog.setId(blogPojo.getId());
         }
-        blog.setAuthor(blogPojo.getAuthor());
         blog.setTitle(blogPojo.getTitle());
+        blog.setAuthor(blogPojo.getAuthor());
+        blog.setContent(blogPojo.getContent());
         blog.setDate(blogPojo.getDate());
-        blog.setContent(blog.getContent());
 
         if(blogPojo.getImage()!=null){
-            StringBuilder fileNames = new StringBuilder();
-            System.out.println(UPLOAD_DIRECTORY);
+//            StringBuilder fileNames = new StringBuilder();
+//            System.out.println(UPLOAD_DIRECTORY);
             Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, blogPojo.getImage().getOriginalFilename());
-            fileNames.append(blogPojo.getImage().getOriginalFilename());
             Files.write(fileNameAndPath, blogPojo.getImage().getBytes());
 
             blog.setImage(blogPojo.getImage().getOriginalFilename());
@@ -52,5 +49,16 @@ public class BlogServicesImpl implements BlogServices {
     @Override
     public List<Blog> fetchAll() {
         return blogRepo.findAll();
+    }
+
+    @Override
+    public Blog fetchById(Integer id) {
+        return blogRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
+
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        blogRepo.deleteById(id);
     }
 }

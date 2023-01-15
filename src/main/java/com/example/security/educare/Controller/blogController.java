@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -50,14 +51,14 @@ public class blogController {
             return "redirect:blog/addBlog";
         }
 
-        blogServices.save(blogPojo);
-        redirectAttributes.addFlashAttribute("successMsg", "Image saved successfully");
+        blogServices.saveBlog(blogPojo);
+        redirectAttributes.addFlashAttribute("successMsg", "Blog saved successfully");
 
-        return "redirect:/blog/addBlog";
+        return "redirect:/blog/list";
     }
 
     @GetMapping("/list")
-    public String addBlog( Model model) {
+    public String displayBlog( Model model) {
         List<Blog> blogs = blogServices.fetchAll();
         model.addAttribute("bloglist", blogs.stream().map(blog ->
                 Blog.builder()
@@ -70,9 +71,37 @@ public class blogController {
                         .build()
 
         ));
-        return "Blog";
+        return "blogtable";
     }
 
+    @GetMapping("/view")
+    public String getViewList(Model model) {
+        List<Blog> blogs = blogServices.fetchAll();
+        model.addAttribute("bloglist", blogs.stream().map(blog ->
+        Blog.builder()
+                .id(blog.getId())
+                .title(blog.getTitle())
+                .author(blog.getAuthor())
+                .imageBase64(getImageBase64(blog.getImage()))
+                .build()
+
+        ));
+        return "blog";
+    }
+
+    @GetMapping("/editBlog/{id}")
+    public String editBlog(@PathVariable("id") Integer id, Model model) {
+        Blog blog = blogServices.fetchById(id);
+        model.addAttribute("bloglist", new BlogPojo(blog));
+        return "adminBlog";
+    }
+
+
+    @GetMapping("/deleteBlog/{id}")
+    public String deleteBlog(@PathVariable("id") Integer id) {
+        blogServices.deleteById(id);
+        return "redirect:/blog/list";
+    }
 
     public Map<String, String> validateRequest(BindingResult bindingResult) {
         if (!bindingResult.hasErrors()) {
@@ -89,7 +118,7 @@ public class blogController {
     }
 
     public String getImageBase64(String fileName) {
-        String filePath = System.getProperty("user.dir") + "/FinalEducareProject/educareimage/";
+        String filePath = System.getProperty("user.dir") + "/educareimage/";
         File file = new File(filePath + fileName);
         byte[] bytes ;
         try {
@@ -100,6 +129,7 @@ public class blogController {
         }
         return Base64.getEncoder().encodeToString(bytes);
     }
+
 
 
 }
