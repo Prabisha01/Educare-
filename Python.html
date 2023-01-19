@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
     <title> Educare</title>
@@ -34,7 +34,7 @@
     
 
     <!-- Custom Bootstrap Stylesheet -->
-    <link href="Css/style.css" rel="stylesheet" />
+    <link th:href="@{~/Css/style.css}" rel="stylesheet" />
   </head>
 
   <body>
@@ -64,18 +64,20 @@
           id="navbarCollapse"
         >
           <div class="navbar-nav font-weight-lighter mx-auto py-0">
-            <a href="index.html" class="nav-item nav-link">Home</a>
-            <a href="ab.html" class="nav-item nav-link active">About</a>
-            <a href="Course.html" class="nav-item nav-link">Course</a>
-            <a href="team.html" class="nav-item nav-link">Teams</a>
-            <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+            <a th:href="@{~/index.html}" class="nav-item nav-link">Home</a>
+            <a th:href="@{~/ab.html}" class="nav-item nav-link active">About</a>
+            <a th:="@{~/Course.html}" class="nav-item nav-link">Course</a>
+            <a th:href="@{~/team.html}" class="nav-item nav-link">Teams</a>
+            <a th:href="@{~/gallery.html}" class="nav-item nav-link">Gallery</a>
             <div class="nav-item dropdown">
               <div class="dropdown-menu rounded-0 m-0">
               </div>
             </div>
-            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a th:href="@{~/contact.html}" class="nav-item nav-link">Contact</a>
           </div>
           <a href="" class="btn btn-primary px-4">Profile</a>
+
+        </div>
 
                 </nav>
     </div>
@@ -286,6 +288,59 @@
     ></a>
 
     
-  </head>
+  </div>
+</section>
+  </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8++8
+
   </html>
 
