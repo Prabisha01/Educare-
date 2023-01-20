@@ -34,6 +34,10 @@ public class admincontroller {
         return "admin";
 
     }
+    @GetMapping("/dashboard")
+    public String getDashboardPage() {
+        return "admin";
+    }
     @GetMapping("/contactlist")
     public String getContactList(org.springframework.ui.Model model) {
         List<Contact> contacts = userService.fetchAllContact();

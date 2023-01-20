@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" th:href="@{/css/quiz.css}">
 </head>
 <body>
     <div class="quiz-container" id="quiz">
@@ -35,6 +35,6 @@
         </div>
         <button id="submit">Sumbit</button>
     </div>
-    <script src="/assets/script.js"></script>
+    <script th:src="@{/javascript/quiz.js}"></script>
 </body>
 </html>

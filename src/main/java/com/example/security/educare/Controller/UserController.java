@@ -12,11 +12,14 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
+import java.util.Collection;
 import java.util.List;
 
 @Controller
@@ -88,7 +91,13 @@ public class  UserController {
         return "redirect:/user/Contact";
     }
 
-
+    @PostMapping("/logout")
+    public String logout(Authentication authentication) {
+        if (authentication.isAuthenticated()) {
+            SecurityContextHolder.clearContext();
+        }
+        return "/login";
+    }
 
 
 
@@ -103,10 +112,21 @@ public class  UserController {
     }
 
 
-    @GetMapping("/homepage")
-    public String Page() {
-        return "homepage";
 
+    @GetMapping("/homepage")
+    public String gethomepage(Model model, Principal principal, Authentication authentication ) {
+        if (authentication!=null){
+            Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+            for (GrantedAuthority grantedAuthority : authorities) {
+                if (grantedAuthority.getAuthority().equals("Admin")) {
+                    return "redirect:/admin/dashboard";
+                }
+            }
+        }
+        if (principal != null) {
+            model.addAttribute("prof", userService.findByEmail(principal.getName()));
+        }
+        return "homepage";
     }
 
     @GetMapping("/python")
@@ -132,7 +152,12 @@ public class  UserController {
 
     @GetMapping("/quiz")
     public String getquiz() {
-        return "Quiz_python";
+        return "Quiz";
+
+    }
+    @GetMapping("/certificate")
+    public String getcerticate() {
+        return "certificate";
 
     }
     @GetMapping("/forgotpassword")
