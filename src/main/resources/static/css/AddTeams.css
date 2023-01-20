@@ -10040,65 +10040,6 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 
-<<<<<<< HEAD
-.AddTeams{
- width: 600px;
-  border: 15px solid black;
-  padding: 50px;
-  margin: 45px;
-}
-
-
-
-.batn{
-  color: #fff;
-  background-color: green;
-  border-color: #whitesmoke;
-  width: 100px;
-  border: 2px solid black;
-  padding: 2px;
-  margin: 20px;
-
-}
-
-.batn1{
-  color: #fff;
-  background-color: darkorange;
-  border-color: #whitesmoke;
-   width: 100px;
-  border: 2px solid black;
-  padding: 2px;
-  margin: 20px;
-}
-
-.batn2{
-  color: #fff;
-  background-color: red;
-  border-color: #whitesmoke;
-   width: 100px;
-  border: 2px solid black;
-  padding: 2px;
-  margin: 20px;
-}
-
-.batn:hover{
-  color: black;
-  background-color: whitesmoke;
-  border-color: #black;
-}
-
-.batn1:hover{
-  color: black;
-  background-color: whitesmoke;
-  border-color: #black;
-}
-
-.batn2:hover{
-  color: black;
-  background-color: whitesmoke;
-  border-color: #black;
-}
-=======
 
 
 
@@ -10106,4 +10047,3 @@ a.text-dark:hover, a.text-dark:focus {
 
 
 
->>>>>>> 7cc7c8a95272775a899383ceaff75b7b96d959d3

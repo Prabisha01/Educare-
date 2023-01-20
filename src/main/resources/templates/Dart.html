@@ -8,7 +8,7 @@
     <meta content="Html" name="description" />
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon" />
+    <link th:href="@{~img/favicon.ico}" rel="icon" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -34,7 +34,7 @@
     
 
     <!-- Custom Bootstrap Stylesheet -->
-    <link href="Css/style.css" rel="stylesheet" />
+    <link th:href="@{~/Css/style.css}" rel="stylesheet" />
   </head>
 
   <body>
@@ -64,18 +64,19 @@
           id="navbarCollapse"
         >
           <div class="navbar-nav font-weight-lighter mx-auto py-0">
-            <a href="index.html" class="nav-item nav-link">Home</a>
-            <a href="ab.html" class="nav-item nav-link active">About</a>
-            <a href="Course.html" class="nav-item nav-link">Course</a>
-            <a href="team.html" class="nav-item nav-link">Teams</a>
-            <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+            <a th:href="@{~/index.html}" class="nav-item nav-link">Home</a>
+            <a th:href="@{~/ab.html}" class="nav-item nav-link active">About</a>
+            <a th:href="@{~/Course.html}" class="nav-item nav-link">Course</a>
+            <a th:href="@{~/team.html}" class="nav-item nav-link">Teams</a>
+            <a th:href="@{~/gallery.html}" class="nav-item nav-link">Gallery</a>
             <div class="nav-item dropdown">
               <div class="dropdown-menu rounded-0 m-0">
               </div>
             </div>
-            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a th:href="@{~/contact.html}" class="nav-item nav-link">Contact</a>
           </div>
           <a href="" class="btn btn-primary px-4">Profile</a>
+        </div>
 
                 </nav>
     </div>
@@ -242,19 +243,19 @@
             <a class="text-white mb-2" href="#"
               ><i class="fa fa-angle-right mr-2"></i>Home</a
             >
-            <a class="text-white mb-2" href="About.html"
+            <a class="text-white mb-2" th:href="@{~/About.html}"
               ><i class="fa fa-angle-right mr-2"></i>About Us</a
             >
-            <a class="text-white mb-2" href="Course.html"
+            <a class="text-white mb-2" th:href="@{~/Course.html}"
               ><i class="fa fa-angle-right mr-2"></i>Our Course</a
             >
-            <a class="text-white mb-2" href="#"
+            <a class="text-white mb-2" th:href="@{~/#}"
               ><i class="fa fa-angle-right mr-2"></i>Our Expert</a
             >
-            <a class="text-white mb-2" href="#"
+            <a class="text-white mb-2" th:href="@{~/#}"
               ><i class="fa fa-angle-right mr-2"></i>Our Blog</a
             >
-            <a class="text-white" href="#"
+            <a class="text-white" th:href="@{~/#}"
               ><i class="fa fa-angle-right mr-2"></i>Contact Us</a
             >
           </div>
@@ -284,8 +285,8 @@
     <a href="#" class="btn btn-primary p-3 back-to-top"
       ><i class="fa fa-angle-double-up"></i
     ></a>
-
-    
-  </head>
+    </div>
+</section>
+  </body>
   </html>
 

@@ -24,7 +24,6 @@ public class BlogServicesImpl implements BlogServices {
         blog.setAuthor(blogPojo.getAuthor());
         blog.setDate(blogPojo.getDate());
         blog.setContent(blogPojo.getContent());
-//        blog.setImg(blogPojo.getImg());
         blogRepo.save(blog);
         return null;
     }

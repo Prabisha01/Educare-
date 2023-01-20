@@ -32,5 +32,6 @@ public class Blog {
     private String content;
 
 
+//    public String getImg() {
+    }
 
-}

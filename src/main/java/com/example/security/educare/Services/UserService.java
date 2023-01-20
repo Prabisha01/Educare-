@@ -2,6 +2,7 @@ package com.example.security.educare.Services;
 
 
 import com.example.security.educare.Entity.User;
+import com.example.security.educare.Pojo.BlogPojo;
 import com.example.security.educare.Pojo.ContactPojo;
 import com.example.security.educare.Pojo.UserPojo;
 
@@ -18,4 +19,9 @@ public interface UserService {
     void deleteById(Integer id);
 
     UserPojo findByUserName(String email);
+
+    String save(BlogPojo blogPojo);
+    UserPojo findByEmail(String email);
+    UserPojo findByPassword(String password);
+
 }

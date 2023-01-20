@@ -3,6 +3,7 @@
 
     import com.example.security.educare.Entity.Contact;
     import com.example.security.educare.Entity.User;
+    import com.example.security.educare.Pojo.BlogPojo;
     import com.example.security.educare.Pojo.ContactPojo;
     import com.example.security.educare.Repo.ContactRepo;
     import com.example.security.educare.Repo.UserRepo;
@@ -74,6 +75,21 @@
             User user = userRepo.findByUserName(email)
                     .orElseThrow(() -> new AppException("Invalid User email", HttpStatus.BAD_REQUEST));
             return new UserPojo(user);
+        }
+
+        @Override
+        public String save(BlogPojo blogPojo) {
+            return null;
+        }
+
+        @Override
+        public UserPojo findByEmail(String email) {
+            return null;
+        }
+
+        @Override
+        public UserPojo findByPassword(String password) {
+            return null;
         }
 
     }

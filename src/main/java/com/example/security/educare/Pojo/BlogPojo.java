@@ -17,7 +17,7 @@ public class BlogPojo {
     private  String date;
     private  String phoneNum;
     private  String content;
-//    private  String img;
+   private  String img;
 
     public BlogPojo(Blog blog) {
         this.id=blog.getId();
@@ -25,6 +25,5 @@ public class BlogPojo {
         this.date=blog.getDate();
         this.content=blog.getContent();
 
-//        this.img=blog.getImg();
     }
 }
