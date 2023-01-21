@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="post-box tech" th:each="file:${fileuploads}" >
+    <img th:src="'data:image/png;base64,'+${file.imageBase64}" alt="" class="post-img" >
+</div>
+</div>
+</body>
+</html>
