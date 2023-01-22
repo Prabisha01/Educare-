@@ -1,41 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--    Using Cdn -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="../Static/css/style.css">
-  
+
+    <style>
+        .inputstl {
+            padding: 9px;
+            border: solid 1px #B3FFB3;
+            outline: 0;
+            background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #A4FFA4), to(#FFFFFF));
+            background: -moz-linear-gradient(top, #FFFFFF, #A4FFA4 1px, #FFFFFF 25px);
+            box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+            -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+            -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+
+        }
+
+    </style>
+
 </head>
 
 <body>
-    <div class="AddTeams">  
-    <input type="hidden" id="id" />  
-    <b>First name:</b><input type="text" id="firstName" /><br />  
-    <b>Last name:</b><input type="text" id="lastName" /><br />  
-    <b>Expertise:</b><input type="text" id="city" /><br />  
-    <b>State:</b><input type="text" id="state" /><br />  
-    <b>Phone:</b>  
-    <input type="text" id="phone" /><br />  
-    <b>Email:</b><input type="text" id="email" /><br />  
+<div class="container">
+    <h1>Add Teams</h1>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="name1" class="col-sm-2 control-label">Name:</label>
+            <div class="col-sm-4">
+                <input type="email" class="form-control inputstl" id="name1" placeholder="Enter Your Full Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="gender1" class="col-sm-2 control-label">Gender:</label>
+            <div class="col-sm-2">
+                <select class="form-control inputstl" id="gender1">
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
 
-    <button class="batn" onclick="InsertData()">Insert Data</button>  
-    <button class="batn1" onclick="UpdateData()">Update Data</button>  
-    <button class="batn2" onclick="ClearData()">Clear</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email1" class="col-sm-2 control-label">Email:</label>
+            <div class="col-sm-5">
+                <input type="email" class="form-control inputstl" id="email1" placeholder="Enter Email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password1" class="col-sm-2 control-label">Password:</label>
+            <div class="col-sm-3">
+                <input type="password" class="form-control inputstl" id="password1" placeholder="Password here">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="address1" class="col-sm-2 control-label">Address:</label>
+            <div class="col-sm-5">
+                <input type="email" class="form-control inputstl" id="address1" placeholder="Full Address">
+            </div>
+        </div>
 
-<script>  
-    var id = document.getElementById('id');  
-    var firstName = document.getElementById('firstName');  
-    var city = document.getElementById('city');  
-    var state = document.getElementById('state');  
-    var email = document.getElementById('email');  
-    var lastName = document.getElementById('lastName');  
-    var phone = document.getElementById('phone');  
-    var results = document.getElementById('details');  
-</script> 
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-4">
+                <button type="submit" class="btn btn-lg btn-block btn-success">Add new</button>
+            </div>
+        </div>
+    </form>
 </div>
-
 </body>
 </html>
+
