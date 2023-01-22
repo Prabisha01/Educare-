@@ -33,17 +33,16 @@
     </div>
     </div>
 
-      <div class="right-section">
+ <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-xl-4 col-xxl-4 offset-xxl-2 offset-xl-1 pe-0  ">
+     <h1 class="d-grid text-center  pt-2 pb-2">Sign in</h1>
+     <div class=" mycustom d-flex justify-content-around  ">
 
-        <form action="">
-
-          <h1>Sign In</h1><br>
-          <!-- <h5>Welcome to Educare!</h5><br><br> -->
-<!-- label -->
-        <div class="formGroup">
-          <label for="">Username</label>
-          <input id ="user" type="text" onsubmit="return validateForm()" class="Username" placeholder="Username" required>
-        </div>
+         <form th:method="post" th:action="@{/login}" >
+             <div class="row  p-0 m-0  ">
+                 <div class="col-xl-12 form-group ">
+                     <label class="pb-2 pt-2" >Username</label>
+                     <input type="text" class="form-control " placeholder="Username"  name ="username" required >
+                 </div>
     
         <div class="formGroup">
           <label for="">Password</label>
