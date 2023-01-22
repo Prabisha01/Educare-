@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,7 +25,12 @@
   <div class="main-container">
 <!-- Image -->
     <div class="left-section">
-      <img class="loginimg" src="../Static/images/Login.png" alt="">
+        <img
+                th:src="@{~/images/login.png}"
+                class="img-fluid w-100 h-100 ps-0 m-0 "
+                alt="Responsive image" />
+
+    </div>
     </div>
 
       <div class="right-section">
