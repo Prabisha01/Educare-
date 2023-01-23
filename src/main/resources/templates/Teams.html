@@ -30,11 +30,8 @@
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
 
-
-    
-
     <!-- Custom Bootstrap Stylesheet -->
-    <link th:href="@{~/Css/style.css}" rel="stylesheet" />
+    <link th:href="@{~/css/style.css}" rel="stylesheet"/>
   </head>
 
   <body>
@@ -114,7 +111,7 @@
               class="position-relative overflow-hidden mb-4"
               style="border-radius: 100%"
             >
-              <img class="img-fluid w-100" th:src="@{~/img/team-1.jpg}" alt="" />
+              <img class="img-fluid w-100" th:src="@{~/images/team-1.jpg}" alt="" />
               <div
                 class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute"
               >
@@ -146,7 +143,7 @@
               class="position-relative overflow-hidden mb-4"
               style="border-radius: 100%"
             >
-              <img class="img-fluid w-100" th:src="@{~/img/team-2.jpg}" alt="" />
+              <img class="img-fluid w-100" th:src="@{~/images/team-2.jpg}" alt="" />
               <div
                 class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute"
               >
@@ -178,7 +175,7 @@
               class="position-relative overflow-hidden mb-4"
               style="border-radius: 100%"
             >
-              <img class="img-fluid w-100" th:src="@{~/img/rabi.JPG}" alt="" />
+              <img class="img-fluid w-100" th:src="@{~/images/rabi.JPG}" alt="" />
               <div
                 class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute"
               >
@@ -210,7 +207,7 @@
               class="position-relative overflow-hidden mb-4"
               style="border-radius: 100%"
             >
-              <img class="img-fluid w-100" th:src="@{~/img/team-4.jpg}" alt="" />
+              <img class="img-fluid w-100" th:src="@{~/images/team-4.jpg}" alt="" />
               <div
                 class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute"
               >
@@ -242,7 +239,7 @@
               class="position-relative overflow-hidden mb-4"
               style="border-radius: 100%"
             >
-              <img class="img-fluid w-100" th:src="@{~/img/team-4.jpg}" alt="" />
+              <img class="img-fluid w-100" th:src="@{~/images/team-4.jpg}" alt="" />
               <div
                 class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute"
               >
@@ -274,7 +271,7 @@
               class="position-relative overflow-hidden mb-4"
               style="border-radius: 100%"
             >
-              <img class="img-fluid w-100" th:src="@{~/img/team-3.jpg}" alt="" />
+              <img class="img-fluid w-100" th:src="@{~/images/team-3.jpg}" alt="" />
               <div
                 class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute"
               >
@@ -306,7 +303,7 @@
               class="position-relative overflow-hidden mb-4"
               style="border-radius: 100%"
             >
-              <img class="img-fluid w-100" th:src="@{~/img/team-2.jpg}" alt="" />
+              <img class="img-fluid w-100" th:src="@{~/images/team-2.jpg}" alt="" />
               <div
                 class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute"
               >
@@ -338,7 +335,7 @@
               class="position-relative overflow-hidden mb-4"
               style="border-radius: 100%"
             >
-              <img class="img-fluid w-100" th:src="@{~/img/team-1.jpg}" alt="" />
+              <img class="img-fluid w-100" th:src="@{~/images/team-1.jpg}" alt="" />
               <div
                 class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute"
               >
@@ -368,13 +365,25 @@
         </div>
       </div>
     </div>
-   
+
+
+    <tbody>
+    <div class="h1">
+      <tr th:each="teams:${teamsList}">
+        <td th:text="${teams.email}"></td>
+        <td th:text="${teams.mobileNo}"></td>
+        <td th:text="${teams.userName}"></td>
+        <!--          <td>-->
+        <!--            <a th:href="@{~/teams/edit/}+${user.id}">Edit</a> |-->
+        <!--            <a th:href="@{~/teams/delete/}+${user.id}">Delete</a>-->
+        <!--          </td>-->
+      </tr>
+    </div>
+
+    </tbody>
 
 
     <!-- Team End -->
-
-    
-
 
 
 
@@ -470,25 +479,6 @@
             >
           </div>
         </div>
-
-        <tbody>
-        <tr th:each="user:${teamsList}">
-          <td th:text="${teams.email}"></td>
-          <td th:text="${teams.mobileNo}"></td>
-          <td th:text="${teams.userName}"></td>
-<!--          <td>-->
-<!--            <a th:href="@{~/teams/edit/}+${user.id}">Edit</a> |-->
-<!--            <a th:href="@{~/teams/delete/}+${user.id}">Delete</a>-->
-<!--          </td>-->
-
-        </tr>
-
-
-
-
-
-
-
         
       <div
         class="container-fluid pt-5"

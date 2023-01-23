@@ -1,5 +1,6 @@
 package com.example.security.educare.Controller;
 
+import com.example.security.educare.Entity.Teams;
 import com.example.security.educare.Pojo.TeamsPojo;
 import com.example.security.educare.Pojo.UserPojo;
 import com.example.security.educare.Services.TeamsServices;
@@ -10,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -27,8 +30,14 @@ public class teamcontroller {
     @PostMapping("/save")
     public String saveUser(@Valid TeamsPojo teamsPojo) {
         teamsServices.saveUser(teamsPojo);
-        return "redirect:Teams";
+        return "Teams";
     }
 
+    @GetMapping("/list")
+    public String getUserList(Model model) {
+        List<Teams> teams = teamsServices.fetchAll();
+        model.addAttribute("teamsList", teams);
+        return "Teams";
+    }
 
 }

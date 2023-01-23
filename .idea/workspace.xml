@@ -6,21 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5893f9c5-efed-4e5c-9bf4-1e996d99633d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Static/css/Signup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Static/css/dashboard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Static/images/customer.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Static/images/pic_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Static/images/pic_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Static/images/pic_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Static/images/pic_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Static/images/pic_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Static/images/picture.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Static/javascript/captcha.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Static/javascript/charts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Static/javascript/leaderboard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Static/javascript/leaderboard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/security/educare/Security/SpringSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/security/educare/Security/SpringSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Addteams.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Addteams.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/security/educare/Controller/teamcontroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/security/educare/Controller/teamcontroller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Teams.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Teams.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +92,7 @@
       <workItem from="1674302993795" duration="1425000" />
       <workItem from="1674384195075" duration="1272000" />
       <workItem from="1674449169557" duration="4386000" />
-      <workItem from="1674459324026" duration="4305000" />
+      <workItem from="1674459324026" duration="7862000" />
     </task>
     <servers />
   </component>
