@@ -25,42 +25,59 @@
 <body>
 <div class="container">
     <h1>Add Teams</h1>
-    <form class="form-horizontal" role="form">
+    <form class="form-horizontal" role="form" th:method="post" th:action="@{/teams/save}" th:object="${teams}" >
+        <input type="text" hidden placeholder="UserId..." th:field="*{id}" th:value="${teams.id}" >
         <div class="form-group">
-            <label for="name1" class="col-sm-2 control-label">Name:</label>
+            <label for="name1" class="col-sm-2 control-label">FirstName:</label>
             <div class="col-sm-4">
-                <input type="email" class="form-control inputstl" id="name1" placeholder="Enter Your Full Name">
+                <input type="text" class="form-control inputstl" id="name1" placeholder="Enter First Name" th:field="*{firstname}" th:value="${teams.firstname}">
             </div>
         </div>
+
         <div class="form-group">
-            <label for="gender1" class="col-sm-2 control-label">Gender:</label>
-            <div class="col-sm-2">
-                <select class="form-control inputstl" id="gender1">
-                    <option>Male</option>
-                    <option>Female</option>
-                </select>
+            <label for="name1" class="col-sm-2 control-label">LastName:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control inputstl" id="name2" placeholder="Enter Last Name" th:field="*{lastname}" th:value="${teams.lastname}">
 
             </div>
         </div>
+
+        <div class="form-group">
+            <label for="name1" class="col-sm-2 control-label">Username:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control inputstl" id="name5" placeholder="Username" th:field="*{userName}" th:value="${teams.userName}">
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="name1" class="col-sm-2 control-label">MobileNo:</label>
+            <div class="col-sm-4">
+                <input type="tel" class="form-control inputstl" id="name3" placeholder="Enter Mobile" th:field="*{mobileNo}" th:value="${teams.mobileNo}">
+            </div>
+        </div>
+
         <div class="form-group">
             <label for="email1" class="col-sm-2 control-label">Email:</label>
             <div class="col-sm-5">
-                <input type="email" class="form-control inputstl" id="email1" placeholder="Enter Email">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="password1" class="col-sm-2 control-label">Password:</label>
-            <div class="col-sm-3">
-                <input type="password" class="form-control inputstl" id="password1" placeholder="Password here">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="address1" class="col-sm-2 control-label">Address:</label>
-            <div class="col-sm-5">
-                <input type="email" class="form-control inputstl" id="address1" placeholder="Full Address">
+                <input type="email" class="form-control inputstl" id="email1" placeholder="Enter Email" th:field="*{email}" th:value="${teams.email}">
             </div>
         </div>
 
+        <div class="form-group">
+            <label for="password1" class="col-sm-2 control-label">Password:</label>
+            <div class="col-sm-3">
+                <input type="password" class="form-control inputstl" id="password1" placeholder="Password here" th:field="*{password}" th:value="${teams.password}">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="name1" class="col-sm-2 control-label">Field:</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control inputstl" id="name4" placeholder="Enter the specific field" th:field="*{field}" th:value="${teams.field}">
+            </div>
+        </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-4">
                 <button type="submit" class="btn btn-lg btn-block btn-success">Add new</button>

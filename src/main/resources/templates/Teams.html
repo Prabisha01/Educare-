@@ -470,6 +470,25 @@
             >
           </div>
         </div>
+
+        <tbody>
+        <tr th:each="user:${teamsList}">
+          <td th:text="${teams.email}"></td>
+          <td th:text="${teams.mobileNo}"></td>
+          <td th:text="${teams.userName}"></td>
+<!--          <td>-->
+<!--            <a th:href="@{~/teams/edit/}+${user.id}">Edit</a> |-->
+<!--            <a th:href="@{~/teams/delete/}+${user.id}">Delete</a>-->
+<!--          </td>-->
+
+        </tr>
+
+
+
+
+
+
+
         
       <div
         class="container-fluid pt-5"
