@@ -1,7 +1,10 @@
 package com.example.security.educare.Security;
 
 import com.example.security.educare.Services.Impl.CustomUserDetailService;
+<<<<<<< HEAD
 import lombok.RequiredArgsConstructor;
+=======
+>>>>>>> c6233003acd903dd11d9e058fb1afa8f4a67a8ab
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -16,9 +19,24 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SpringSecurityConfig {
     private final CustomUserDetailService customUserDetailService;
 
+<<<<<<< HEAD
     public SpringSecurityConfig(CustomUserDetailService customUserDetailService) {
         this.customUserDetailService = customUserDetailService;
     }
+=======
+
+    public SpringSecurityConfig(CustomUserDetailService customUserDetailService) {
+        this.customUserDetailService = customUserDetailService;
+    }
+
+    @Bean
+    public DaoAuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
+        authenticationProvider.setUserDetailsService(customUserDetailService);
+        authenticationProvider.setPasswordEncoder(PasswordEncoderUtil.getInstance());
+        return authenticationProvider;
+    }
+>>>>>>> c6233003acd903dd11d9e058fb1afa8f4a67a8ab
 
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {

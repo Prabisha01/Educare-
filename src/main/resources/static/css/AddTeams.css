@@ -2369,7 +2369,7 @@ fieldset:disabled a.btn {
 .btn-primary {
   color: #fff;
   background-color: black;
-  border-color: #whitesmoke;
+  border-color:#whitesmoke;
 }
 
 .btn-primary:hover {
@@ -6535,7 +6535,7 @@ button.bg-dark:focus {
 }
 
 .rounded {
-  border-radius: px !important;
+  border-radius: 1px !important;
 }
 
 .rounded-top {
@@ -9696,7 +9696,7 @@ a.text-dark:hover, a.text-dark:focus {
     display: none;
   }
   .badge {
-    border: 1px solid #000;
+    border: 1px solid #FFFFFF;
   }
   .table {
     border-collapse: collapse !important;

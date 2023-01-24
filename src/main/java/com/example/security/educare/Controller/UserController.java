@@ -38,7 +38,18 @@ public class UserController {
         model.addAttribute("user", new UserPojo());
         return "signup";
 
+<<<<<<< HEAD
         }
+=======
+    @GetMapping("/course")
+    public String getlland(Model model) {
+        model.addAttribute("user", new UserPojo());
+        return "Course";
+    }
+
+
+
+>>>>>>> c6233003acd903dd11d9e058fb1afa8f4a67a8ab
 
     @GetMapping("/edit/{id}")
     public String editUser(@PathVariable("id") Integer id, Model model) {
@@ -67,7 +78,12 @@ public class UserController {
         if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
             return "/login";
         }
+<<<<<<< HEAD
         return "redirect:/user/landing";
+=======
+        return "redirect:user/landing";
+
+>>>>>>> c6233003acd903dd11d9e058fb1afa8f4a67a8ab
 
         }
         @GetMapping("/contact")

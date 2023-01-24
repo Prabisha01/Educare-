@@ -50,8 +50,14 @@ public class User implements UserDetails {
     }
 
     @Override
+<<<<<<< HEAD
     public String getUsername() {return this.userName;}
 
+=======
+    public String getUsername() {
+        return this.userName;
+    }
+>>>>>>> c6233003acd903dd11d9e058fb1afa8f4a67a8ab
 
     @Override
     public boolean isAccountNonExpired() {
@@ -73,4 +79,3 @@ public class User implements UserDetails {
         return true;
     }
 }
-
