@@ -6,22 +6,42 @@
     import com.example.security.educare.Pojo.BlogPojo;
     import com.example.security.educare.Pojo.ContactPojo;
     import com.example.security.educare.Repo.ContactRepo;
+    import com.example.security.educare.Repo.EmailCredRepo;
     import com.example.security.educare.Repo.UserRepo;
     import com.example.security.educare.Services.UserService;
     import com.example.security.educare.Pojo.UserPojo;
     import com.example.security.educare.exception.AppException;
+    import freemarker.template.Configuration;
+    import freemarker.template.Template;
+    import jakarta.mail.internet.MimeMessage;
     import lombok.RequiredArgsConstructor;
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.beans.factory.annotation.Qualifier;
     import org.springframework.http.HttpStatus;
+    import org.springframework.mail.javamail.JavaMailSender;
+    import org.springframework.mail.javamail.MimeMessageHelper;
+    import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
     import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
     import org.springframework.stereotype.Service;
+    import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 
+    import java.nio.charset.StandardCharsets;
+    import java.util.HashMap;
     import java.util.List;
+    import java.util.Map;
 
     @Service
     @RequiredArgsConstructor
     public class UserServiceImpl implements UserService {
         public final ContactRepo contactRepo;
         public final UserRepo userRepo;
+        private final JavaMailSender getJavaMailSender;
+        private final EmailCredRepo emailCredRepo;
+        private final ThreadPoolTaskExecutor taskExecutor;
+
+        @Autowired
+        @Qualifier("emailConfigBean")
+        private Configuration emailConfig;
 
 
         @Override
@@ -71,8 +91,8 @@
         }
 
         @Override
-        public UserPojo findByUserName(String email) {
-            User user = userRepo.findByUserName(email)
+        public UserPojo findByUserName(String user_name) {
+            User user = userRepo.findByUserName(user_name)
                     .orElseThrow(() -> new AppException("Invalid User email", HttpStatus.BAD_REQUEST));
             return new UserPojo(user);
         }
@@ -90,6 +110,32 @@
         @Override
         public UserPojo findByPassword(String password) {
             return null;
+        }
+        @Override
+        public void sendEmail() {
+            try {
+                Map<String, String> model = new HashMap<>();
+
+                MimeMessage message = getJavaMailSender.createMimeMessage();
+                MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(message, MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED, StandardCharsets.UTF_8.name());
+
+                Template template = emailConfig.getTemplate("emailTemp.ftl");
+                String html = FreeMarkerTemplateUtils.processTemplateIntoString(template, model);
+
+                mimeMessageHelper.setTo("sendfrom@yopmail.com");
+                mimeMessageHelper.setText(html, true);
+                mimeMessageHelper.setSubject("Registration");
+                mimeMessageHelper.setFrom("sendTo@yopmail.com");
+
+                taskExecutor.execute(new Thread() {
+                    public void run() {
+                        getJavaMailSender.send(message);
+                    }
+                });
+            } catch (Exception e) {
+
+                e.printStackTrace();
+            }
         }
 
     }

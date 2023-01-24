@@ -21,7 +21,12 @@ public interface UserService {
     UserPojo findByUserName(String email);
 
     String save(BlogPojo blogPojo);
+
+
     UserPojo findByEmail(String email);
+
     UserPojo findByPassword(String password);
+
+    void sendEmail();
 
 }

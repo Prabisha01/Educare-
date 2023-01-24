@@ -28,14 +28,17 @@ public class UserController {
     private final UserService userService;
     private final ValidationAutoConfiguration validationAutoConfiguration;
 
-
+    @GetMapping("/landing")
+        public String homePage() {
+            return "landing";
+    }
 
     @GetMapping("/create")
     public String createUser(Model model) {
         model.addAttribute("user", new UserPojo());
         return "signup";
-    }
 
+        }
 
     @GetMapping("/edit/{id}")
     public String editUser(@PathVariable("id") Integer id, Model model) {
@@ -50,24 +53,21 @@ public class UserController {
         System.out.println("delete");
         userService.deleteById(id);
         return "redirect:/user/list";
-    }
 
-
+        }
     @PostMapping("/save")
     public String saveUser(@Valid UserPojo userPojo) {
         userService.saveUser(userPojo);
-        System.out.println("usercontroller5");
         return "redirect:/user/list"; // router ko path
     }
 
     @GetMapping("/login")
-    public String login() {
+    public String showLoginPage() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
-            return "login";
+            return "/login";
         }
-        return "redirect:/landing";
-
+        return "redirect:/user/landing";
 
         }
         @GetMapping("/contact")
@@ -87,8 +87,12 @@ public class UserController {
         return "blog";
     }
 
-
+    @GetMapping("/sendEmail")
+    public String sendRegistrationEmail() {
+        this.userService.sendEmail();
+        return "emailsuccess";
     }
+}
 
 
 
