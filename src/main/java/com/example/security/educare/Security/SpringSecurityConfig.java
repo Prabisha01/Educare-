@@ -1,7 +1,9 @@
 package com.example.security.educare.Security;
 
+import com.example.security.educare.Services.Impl.CustomUserDetailService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
@@ -11,6 +13,20 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @Configuration
 public class SpringSecurityConfig {
+    private final CustomUserDetailService customUserDetailService;
+
+
+    public SpringSecurityConfig(CustomUserDetailService customUserDetailService) {
+        this.customUserDetailService = customUserDetailService;
+    }
+
+    @Bean
+    public DaoAuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
+        authenticationProvider.setUserDetailsService(customUserDetailService);
+        authenticationProvider.setPasswordEncoder(PasswordEncoderUtil.getInstance());
+        return authenticationProvider;
+    }
 
 
     @Bean
@@ -24,7 +40,7 @@ public class SpringSecurityConfig {
                 .and()
                 .formLogin()
                 .loginPage("/user/login")
-                .defaultSuccessUrl("/dashboard",true)
+                .defaultSuccessUrl("/user/landing",true)
                 .usernameParameter("username")
                 .permitAll()
                 .and()

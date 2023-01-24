@@ -66,7 +66,7 @@ public class UserController {
         if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
             return "login";
         }
-        return "redirect:/landing";
+        return "redirect:user/landing";
 
 
         }
