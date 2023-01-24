@@ -10,18 +10,24 @@
     import com.example.security.educare.Services.UserService;
     import com.example.security.educare.Pojo.UserPojo;
     import com.example.security.educare.exception.AppException;
+
     import lombok.RequiredArgsConstructor;
+
     import org.springframework.http.HttpStatus;
+
     import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
     import org.springframework.stereotype.Service;
 
     import java.util.List;
+
 
     @Service
     @RequiredArgsConstructor
     public class UserServiceImpl implements UserService {
         public final ContactRepo contactRepo;
         public final UserRepo userRepo;
+
+
 
 
         @Override
@@ -71,8 +77,8 @@
         }
 
         @Override
-        public UserPojo findByUserName(String email) {
-            User user = userRepo.findByUserName(email)
+        public UserPojo findByUserName(String user_name) {
+            User user = userRepo.findByUserName(user_name)
                     .orElseThrow(() -> new AppException("Invalid User email", HttpStatus.BAD_REQUEST));
             return new UserPojo(user);
         }
@@ -92,7 +98,10 @@
             return null;
         }
 
-    }
+
+        }
+
+
 
 
 
