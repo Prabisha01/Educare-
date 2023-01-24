@@ -43,8 +43,6 @@ public class UserController {
     }
 
 
-
-
     @GetMapping("/edit/{id}")
     public String editUser(@PathVariable("id") Integer id, Model model) {
         User user = userService.fetchById(id);
@@ -74,29 +72,39 @@ public class UserController {
         if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
             return "login";
         }
-        return "redirect:user/landing";
+        return "redirect:user/homepage";
 
 
-        }
-        @GetMapping("/contact")
-        public String getPage( Model model){
-            model.addAttribute("contact", new ContactPojo());
-            return "Contact";
-        }
+    }
 
-        @PostMapping("/send-message")
-        public String submitMessage(@Valid ContactPojo contactPojo){
-            userService.submitMsg(contactPojo);
-            return "redirect:contact";
-        }
+    @GetMapping("/contact")
+    public String getPage(Model model) {
+        model.addAttribute("contact", new ContactPojo());
+        return "Contact";
+    }
+
+    @PostMapping("/send-message")
+    public String submitMessage(@Valid ContactPojo contactPojo) {
+        userService.submitMsg(contactPojo);
+        return "redirect:contact";
+    }
+
     @GetMapping("/viewBlog")
-    public String viewUserBlog(Model model){
+    public String viewUserBlog(Model model) {
         model.addAttribute("blog", new BlogPojo());
         return "blog";
     }
 
 
+    @GetMapping("/homepage")
+    public String getAbout() {
+        return "homepage";
     }
+    @GetMapping("/userguide")
+    public String getUserguide() {
+        return "userguide";
+    }
+}
 
 
 
