@@ -14,20 +14,20 @@
 <!-- Navigation -->
 <header>
   <nav>
-    <img th:src="../static/images/EduCare.png" alt="#" />
+    <img th:src="@{~/images/EduCare.png}">
     <!-- <div class="search-container">
       <input type="text" class="search-box" placeholder="  Search..." /> -->
     </div>
     <ul class="navbar">
-      <li><a href="homepage.html">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="Course.html">Course</a></li>
-      <li><a href="#">Teams</a></li>
-      <li><a href="Contact.html">Contact</a></li>
+      <li><a th:href="@{~/homepage.html}">Home</a></li>
+      <li><a th:href="@{~/#}">About</a></li>
+      <li><a th:href="@{~/Course.html}">Course</a></li>
+      <li><a th:href="@{~/#}">Teams</a></li>
+      <li><a th:href="@{~/Contact.html}">Contact</a></li>
     </ul>
     <ul class="nav-btns">
-      <li><a href="user/signup.html" class="sign">Sign up</a></li>
-      <li><a href="login.html" class="login">Log in</a></li>
+      <li><a th:href="@{~/signup.html}" class="sign">Sign up</a></li>
+      <li><a th:href="@{~/login.html}" class="login">Log in</a></li>
     </ul>
   </nav>
 </header>
@@ -42,7 +42,7 @@
       <a href = "userguide.html" class="UserGuide">User Guide</a>
     </div>
     <div class="img">
-      <img th:src="../static/images/erge-mahindra-rFUpzPhqkE4-unsplash.jpg" alt="" />
+      <img th:src="@{~/images/erge-mahindra-rFUpzPhqkE4-unsplash.jpg}" alt="" />
     </div>
   </div>
 </section>
@@ -81,7 +81,7 @@
   <div class="container">
     <div class="beginner-wrapper">
       <div class="img">
-        <img th:src="../static/images/Screenshot%202022-11-15%20at%209.52.10%20PM.png" alt="" />
+        <img th:src="@{~/images/Screenshot202022-11-1520at209.52.1020PM.png}" alt="" />
       </div>
       <div class="content">
         <h3>
@@ -93,6 +93,7 @@
         </div>
       </div>
     </div>
+  </div>
 
 </section>
 
@@ -103,8 +104,8 @@
       With EduCare, take the next step toward your personal and professional objectives.
     </h3>
     <div class="img-wrapper">
-      <img th:src="../static/images/img1.jpg" alt="" />
-      <img th:src="../static/images/img2.jpg" alt="" />
+      <img th:src="@{~/images/img1.jpg}" alt="" />
+      <img th:src="@{~/images/img2.jpg}" alt="" />
     </div>
   </div>
 </section>

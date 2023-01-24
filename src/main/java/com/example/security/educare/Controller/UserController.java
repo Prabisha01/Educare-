@@ -36,6 +36,14 @@ public class UserController {
         return "signup";
     }
 
+    @GetMapping("/course")
+    public String getlland(Model model) {
+        model.addAttribute("user", new UserPojo());
+        return "Course";
+    }
+
+
+
 
     @GetMapping("/edit/{id}")
     public String editUser(@PathVariable("id") Integer id, Model model) {
