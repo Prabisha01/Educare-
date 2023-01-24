@@ -105,6 +105,7 @@
           </p>
           <h1 class="mb-4">Meet Our Teams</h1>
         </div>
+
         <div class="row">
           <div class="col-md-6 col-lg-3 text-center team mb-5">
             <div
@@ -138,6 +139,7 @@
             <h4>Sagar chettri</h4>
             <i>Senior Java Developer</i>
           </div>
+
           <div class="col-md-6 col-lg-3 text-center team mb-5">
             <div
               class="position-relative overflow-hidden mb-4"
@@ -330,6 +332,8 @@
             <h4>Albert pagani</h4>
             <i>Fullstack Developer</i>
           </div>
+
+<!--          Next Teams-->
           <div class="col-md-6 col-lg-3 text-center team mb-5">
             <div
               class="position-relative overflow-hidden mb-4"
@@ -367,21 +371,71 @@
     </div>
 
 
+
+<!--From database where temas are added and fetch here in temas gui-->
     <tbody>
-    <div class="h1">
-      <tr th:each="teams:${teamsList}">
-        <td th:text="${teams.email}"></td>
-        <td th:text="${teams.mobileNo}"></td>
-        <td th:text="${teams.userName}"></td>
-        <!--          <td>-->
-        <!--            <a th:href="@{~/teams/edit/}+${user.id}">Edit</a> |-->
-        <!--            <a th:href="@{~/teams/delete/}+${user.id}">Delete</a>-->
-        <!--          </td>-->
-      </tr>
+    <div class="container-fluid pt-5">
+      <div class="container">
+        <div class="row">
+          <tr th:each="teams:${teamsList}">
+
+
+          <div class="col-md-6 col-lg-3 text-center team mb-5">
+            <div
+                    class="position-relative overflow-hidden mb-4"
+                    style="border-radius: 100%"
+            >
+              <img class="img-fluid w-100" th:src="@{~/images/team-1.jpg}" alt="" />
+              <div
+                      class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute"
+              >
+                <a
+                        class="btn btn-outline-light text-center mr-2 px-0"
+                        style="width: 38px; height: 38px"
+                        href="#"
+                ><i class="fab fa-twitter"></i
+                ></a>
+                <a
+                        class="btn btn-outline-light text-center mr-2 px-0"
+                        style="width: 38px; height: 38px"
+                        href="#"
+                ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a
+                        class="btn btn-outline-light text-center px-0"
+                        style="width: 38px; height: 38px"
+                        href="#"
+                ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+            <h4><td th:text="${teams.firstname}"></td>
+              <td th:text="${teams.lastname}"></td>
+            </h4>
+            <i> <td th:text="${teams.field}"></td></i>
+          </div>
+          </tr>
+    </div>
+    </div>
     </div>
 
     </tbody>
 
+<!--    <tr th:each="teams:${teamsList}">-->
+<!--      <td th:text="${teams.firstname}"></td>-->
+<!--      <td th:text="${teams.lastname}"></td>-->
+<!--      <td th:text="${teams.mobileNo}"></td>-->
+<!--      <td th:text="${teams.mobileNO}"></td>-->
+<!--      <td th:text="${teams.userName}"></td>-->
+<!--      <td th:text="${teams.password}"></td>-->
+<!--      <td th:text="${teams.field}"></td>-->
+<!--    </tr>-->
+
+
+    <!--          <td>-->
+    <!--            <a th:href="@{~/teams/edit/}+${user.id}">Edit</a> |-->
+    <!--            <a th:href="@{~/teams/delete/}+${user.id}">Delete</a>-->
+    <!--          </td>-->
 
     <!-- Team End -->
 
@@ -479,7 +533,7 @@
             >
           </div>
         </div>
-        
+
       <div
         class="container-fluid pt-5"
         style="border-top: 1px solid rgba(23, 162, 184, 0.2) ;"
