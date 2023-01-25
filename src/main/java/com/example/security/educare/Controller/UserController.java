@@ -28,21 +28,24 @@ public class UserController {
     private final UserService userService;
     private final ValidationAutoConfiguration validationAutoConfiguration;
 
-
+    @GetMapping("/landing")
+        public String homePage() {
+            return "landing";
+    }
 
     @GetMapping("/create")
     public String createUser(Model model) {
         model.addAttribute("user", new UserPojo());
         return "signup";
-    }
+
+
+        }
 
     @GetMapping("/course")
     public String getlland(Model model) {
         model.addAttribute("user", new UserPojo());
         return "Course";
     }
-
-
 
 
     @GetMapping("/edit/{id}")
@@ -58,45 +61,60 @@ public class UserController {
         System.out.println("delete");
         userService.deleteById(id);
         return "redirect:/user/list";
-    }
 
-
+        }
     @PostMapping("/save")
     public String saveUser(@Valid UserPojo userPojo) {
         userService.saveUser(userPojo);
-        System.out.println("usercontroller5");
         return "redirect:/user/list"; // router ko path
     }
 
     @GetMapping("/login")
-    public String login() {
+    public String showLoginPage() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
-            return "login";
-        }
-        return "redirect:/landing";
-
-
-        }
-        @GetMapping("/contact")
-        public String getPage( Model model){
-            model.addAttribute("contact", new ContactPojo());
-            return "Contact";
+            return "/login";
         }
 
-        @PostMapping("/send-message")
-        public String submitMessage(@Valid ContactPojo contactPojo){
-            userService.submitMsg(contactPojo);
-            return "redirect:contact";
-        }
+        return "redirect:user/homepage";
+
+
+
+    }
+
+    @GetMapping("/contact")
+    public String getPage(Model model) {
+        model.addAttribute("contact", new ContactPojo());
+        return "Contact";
+    }
+
+    @PostMapping("/send-message")
+    public String submitMessage(@Valid ContactPojo contactPojo) {
+        userService.submitMsg(contactPojo);
+        return "redirect:contact";
+    }
+
     @GetMapping("/viewBlog")
-    public String viewUserBlog(Model model){
+    public String viewUserBlog(Model model) {
         model.addAttribute("blog", new BlogPojo());
         return "blog";
     }
 
 
+
+    @GetMapping("/homepage")
+    public String getAbout() {
+        return "homepage";
     }
+
+    @GetMapping("/userguide")
+    public String getUserguide() {
+        return "userguide";
+
+
+
+    }
+}
 
 
 

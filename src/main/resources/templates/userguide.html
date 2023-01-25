@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UserGuide</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="../Static/css/userguide.css">
+    <link rel="stylesheet" th:href="@{~/css/userguide.css}">
 </head>
 
 <body>
@@ -25,7 +25,7 @@
                     data-aos-easing="linear"
                     data-aos-duration="1000" >
                         <i id="playBtn" class="fa-solid fa-play play-btn-lg" onclick="playBigVideo('lg-vid')"></i>
-                        <video id="lg-vid" poster="../Static/images/signin.PNG" class="large-vid" >
+                        <video id="lg-vid" th:poster="@{~/image/signin.PNG}" class="large-vid" >
                             <source src="../Static/images/beach.mp4">
                         </video>
                     </div>
