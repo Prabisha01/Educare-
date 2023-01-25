@@ -26,4 +26,8 @@ public class homepageController {
         return "companyProfile";
     }
 
+    @GetMapping("/userguide")
+    public String getGuide() {
+        return "userguide";
+    }
 }

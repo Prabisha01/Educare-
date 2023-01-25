@@ -97,23 +97,18 @@ public class UserController {
     @GetMapping("/viewBlog")
     public String viewUserBlog(Model model) {
         model.addAttribute("blog", new BlogPojo());
-        return "blog";
+        return "Frequently";
     }
 
 
 
     @GetMapping("/homepage")
-    public String getAbout() {
+    public String getHome() {
         return "homepage";
     }
 
-    @GetMapping("/userguide")
-    public String getUserguide() {
-        return "userguide";
 
 
-
-    }
 }
 
 

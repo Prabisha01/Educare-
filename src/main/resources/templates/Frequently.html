@@ -1,122 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Online learning</title>
-    <link rel="stylesheet" th:href="@{~/css/landing.css}">
-    <link th:href = "@{~/css/style.css}" rel ="stylesheet" />
-    <script src="https://kit.fontawesome.com/a076d05399.js">
-    </script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> FAQ ACCORDION </title>
+    <!-- fontawasome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" th:href="@{~/css/frequent.css}">
+    <link rel="stylesheet" th:href="@{~/css/style.css}">
 </head>
 <body>
-<!-- Navigation -->
-<div class="container-fluid bg-light position-relative shadow">
-    <nav
-            class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5"
-    >
-        <a
-                href=""
-                class="navbar-brand font-weight-bold text-secondary"
-                style="font-size: 50px"
-        >
-            <i class="flaticon-043-teddy-bear"></i>
-            <span class="text-secondary">Educare</span>
-        </a>
-        <button
-                type="button"
-                class="navbar-toggler"
-                data-toggle="collapse"
-                data-target="#navbarCollapse"
-        >
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-                class="collapse navbar-collapse justify-content-between"
-                id="navbarCollapse"
-        >
-            <div class="navbar-nav font-weight-lighter mx-auto py-0">
-                <a th:href="@{~/user/homepage}" class="nav-item nav-link">Home</a>
-                <a th:href="@{~/user/about}" class="nav-item nav-link active">About</a>
-                <a th:href="@{~/Course.html}" class="nav-item nav-link">Course</a>
-                <a th:href="@{~/teams/list}" class="nav-item nav-link">Teams</a>
-                <a th:href="@{~/user/viewBlog}" class="nav-item nav-link">Blogs</a>
-                <a th:href="@{~/user/contact}" class="nav-item nav-link">Contact</a>
-                <div class="nav-item dropdown">
-                    <div class="dropdown-menu rounded-0 m-0">
-                    </div>
-                </div>
-            </div>
-            <a href="" class="btn btn-primary px-4">Profile</a>
+
+<section>
+    <h1 class="title">FAQ's</h1>
+    <div class="questions-container">
+        <div class="question">
+            <button>
+                <span>What really is Educare?</span>
+                <i class="fas fa-chevron-down d-arrow"></i>
+            </button>
+            <p>It is website that helps you achieve greater goals</p>
         </div>
 
-    </nav>
+        <div class="question">
+            <button>
+                <span>How long will it take to learn JavaScript?</span>
+                <i class="fas fa-chevron-down d-arrow"></i>
+            </button>
+            <p>Depends on your practice</p>
+        </div>
+    </div>
+
+<tbody>
+<div class="questions-container">
+ <div class="question">
+    <tr th:each="faq:${frequentList}">
+    <button>
+        <span><td th:text="${faq.question}"></td></span>
+        <i class="fas fa-chevron-down d-arrow"></i>
+    </button>
+    <p><td th:text="${faq.answer}"></td></p>
+    </tr>
 </div>
-<!-- Home -->
-<section class="banner" id="banner">
-    <div class="banner-wrapper">
-        <div class="content">
-            <h3>
-                Want to know more about <span> How To Use The Website</span>
-            </h3>
-            <p>Watch the available videos to learn</p>
-            <div class="btn-wrapper">
-                <button th:href = "@{~/userguide}" class="UserGuide">UserGuide</button>
-            </div>
-        </div>
-        <div class="img">
-            <img th:src="@{~/images/erge-mahindra-rFUpzPhqkE4-unsplash.jpg}" alt="#" />
-        </div>
-
-    </div>
-
+</div>
+</tbody>
 </section>
 
-
-<!-- courses content section -->
-<section class="courses" id="courses">
-    <div class="container">
-        <h2>Explore top courses</h2>
-        <div class="courses-content">
-            <div class="item">
-                <span class="tag">Course</span>
-                <a href="#"><h4>Learn Python 3</h4></a>
-                <ul>
-                    <li>Beginner friendly</li>
-                </ul>
-            </div>
-            <div class="item">
-                <span class="tag">Course</span>
-                <a href="#"><h4>Learn JavaScript</h4></a>
-                <ul>
-                    <li>Beginner friendly</li>
-                </ul>
-            </div>
-            <div class="item">
-                <span class="tag">Course</span>
-                <a href="#"><h4>Learn HTML and CSS</h4></a>
-                <ul>
-                    <li>Beginner friendly</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Section 4 -->
-<section class="with-edu" id="with-edu">
-    <div class="banner2-wrapper">
-        <h3 class="title">
-            With EduCare, take the next step toward your personal and professional objectives.
-        </h3>
-        <div class="img-wrapper">
-            <img th:src="@{~/images/img1.jpg}" alt="" />
-            <img th:src="@{~/images/img2.jpg}" alt="" />
-        </div>
-    </div>
-</section>
 <div
         class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5"
 >
@@ -206,12 +138,14 @@
                 <a class="text-white mb-2" href="#"
                 ><i class="fa fa-angle-right mr-2"></i>Contact Us</a
                 >
-                <a class="text-white mb-2" th:href="@{~/faq/list}"
+                <a class="text-white mb-2" href="#"
                 ><i class="fa fa-angle-right mr-2"></i>FAQ</a
                 >
                 <a class="text-white mb-2 " href="#"
                 ><i class="fa fa-angle-right mr-2"></i>Events</a
                 >
+
+
             </div>
         </div>
 
@@ -228,8 +162,10 @@
     ></a>
 
 
+</body>
+</html>
+<!-- external js-->
+<script th:src="@{~/javascript/frequent.js}"></script>
 
-
-</div>
 </body>
 </html>
