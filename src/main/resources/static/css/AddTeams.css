@@ -2369,7 +2369,11 @@ fieldset:disabled a.btn {
 .btn-primary {
   color: #fff;
   background-color: black;
+<<<<<<< HEAD
+  border-color: whitesmoke;
+=======
   border-color:#whitesmoke;
+>>>>>>> 8d8ccb822b5a3e48572a6315cde8c6a7fc6156db
 }
 
 .btn-primary:hover {
@@ -6427,7 +6431,7 @@ button.bg-danger:focus {
 }
 
 .bg-light {
-  background-color: !important;
+  background-color: #dae0e5 !important;
 }
 
 a.bg-light:hover, a.bg-light:focus,
@@ -9617,7 +9621,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .text-hide {
-  font: 0/0 a;
+  font: 2px "Harlow Solid Italic";
   color: transparent;
   text-shadow: none;
   background-color: transparent;
@@ -9890,7 +9894,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-radius: 10px;
   background-color:black;
   
-  font-size:23;
+  font-size:23px;
 
 }
 
@@ -9916,7 +9920,7 @@ a.text-dark:hover, a.text-dark:focus {
   float: left;
   padding: 2px;
   border: black;
-  margin-top: 24tpx;
+  margin-top: 24px;
   margin-right: 25px;
   font-size: 18px;
 }
@@ -9935,7 +9939,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .Rating{
-  margin-left: 2;
+  margin-left: 2px;
   position: absolute;
   top: 980px;
   right: 550px;
@@ -9947,45 +9951,45 @@ a.text-dark:hover, a.text-dark:focus {
 .Start{
   height: 1000px;
   width: 1000px;
-  top: 100;
-  left: 100;
+  top: 100px;
+  left: 100px;
   
 }
 
  
 
 .Video{
-  margin-left: 2;
+  margin-left: 2px;
   position: absolute;
-  bottom: 100;
-  left: 100;
+  bottom: 100px;
+  left: 100px;
   padding: 5px 10px;
   float: left;
   background-color: black;
 } 
 
 .Content{
-   margin-left: 2;
+   margin-left: 2px;
   position: absolute;
-  top: 100;
-  left: 100;
+  top: 100px;
+  left: 100px;
   padding: 5px 10px;
   float: right;
 
 }
 
 .View{
-  margin-left: 2;
+  margin-left: 2px;
   position: absolute;
-  top: 800;
-  left: 300;
+  top: 800px;
+  left: 300px;
   padding: 8px 15px;
   float: left; 
 }
 
 
 .BC{
- margin-left: 2;
+ margin-left: 2px;
   position: absolute;
   top: 740px;
   right: 1300px;
@@ -9994,7 +9998,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .BQ{
-  margin-left: 2;
+  margin-left: 2px;
   position: absolute;
   top: 740px;
   right: 1170px;
@@ -10006,19 +10010,19 @@ a.text-dark:hover, a.text-dark:focus {
 .btn-primary1 {
   color: #fff;
   background-color: green;
-  border-color: #whitesmoke;
+  border-color: whitesmoke;
 }
 
 .btn-primary2 {
   color: #fff;
   background-color: black;
-  border-color: #whitesmoke;
+  border-color: whitesmoke;
 }
 
 .btn-primary3 {
   color: #fff;
   background-color: red;
-  border-color: #whitesmoke;
+  border-color: whitesmoke;
 }
 
 
