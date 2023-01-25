@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -39,7 +39,7 @@
         Begin Learning from <span>the best courses in the world.</span>
       </h3>
       <p>Start your education with the top courses available.</p>
-      <a href = "userguide.html" class="UserGuide">User Guide</a>
+      <a th:href = @{~/user/userguide}" class="UserGuide">User Guide</a>
     </div>
     <div class="img">
       <img th:src="@{~/images/erge-mahindra-rFUpzPhqkE4-unsplash.jpg}" alt="" />

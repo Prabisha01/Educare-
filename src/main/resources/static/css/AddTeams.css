@@ -2369,7 +2369,11 @@ fieldset:disabled a.btn {
 .btn-primary {
   color: #fff;
   background-color: black;
+<<<<<<< HEAD
   border-color: whitesmoke;
+=======
+  border-color:#whitesmoke;
+>>>>>>> 8d8ccb822b5a3e48572a6315cde8c6a7fc6156db
 }
 
 .btn-primary:hover {
