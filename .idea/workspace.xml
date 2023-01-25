@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5893f9c5-efed-4e5c-9bf4-1e996d99633d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/security/educare/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/security/educare/Controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/AddTeams.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/AddTeams.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Course.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Course.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/landing.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +97,7 @@
       <workItem from="1674449169557" duration="4386000" />
       <workItem from="1674459324026" duration="9294000" />
       <workItem from="1674525217884" duration="10000" />
-      <workItem from="1674549846798" duration="8944000" />
+      <workItem from="1674549846798" duration="10072000" />
     </task>
     <servers />
   </component>
