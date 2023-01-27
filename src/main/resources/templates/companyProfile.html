@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Educare - Company Profile</title>
+    <title> Company Profile</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -32,100 +32,119 @@
 
 <body>
 
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="../../../../company%20profle/img/about.jpg" style="object-fit: cover;">
+<body>
+<div class="container-fluid bg-light position-relative shadow">
+    <nav
+            class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5"
+    >
+        <a
+                href=""
+                class="navbar-brand font-weight-bold text-secondary"
+                style="font-size: 50px"
+        >
+            <i class="flaticon-043-teddy-bear"></i>
+            <span class="text-secondary">Educare</span>
+        </a>
+        <button
+                type="button"
+                class="navbar-toggler"
+                data-toggle="collapse"
+                data-target="#navbarCollapse"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+                class="collapse navbar-collapse justify-content-between"
+                id="navbarCollapse"
+        >
+            <div class="navbar-nav font-weight-lighter mx-auto py-0">
+                <a th:href="@{~/user/homepage}" class="nav-item nav-link">Home</a>
+                <a th:href="@{~/user/about}" class="nav-item nav-link active">About</a>
+                <a th:href="@{~/Course.html}" class="nav-item nav-link">Course</a>
+                <a th:href="@{~/teams/list}" class="nav-item nav-link">Teams</a>
+                <a th:href="@{~/user/viewBlog}" class="nav-item nav-link">Blogs</a>
+                <a th:href="@{~/user/contact}" class="nav-item nav-link">Contact</a>
+                <div class="nav-item dropdown">
+                    <div class="dropdown-menu rounded-0 m-0">
                     </div>
                 </div>
-                <div class="col-lg-7">
-                    <div class="section-title position-relative mb-4">
-                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Company profile</h6>
-                        <h1 class="display-4">First Choice For Online Education Anywhere</h1>
-                    </div>
-                    <p>You can learn or teach using online courses from any location in the world. As a result, there is no need to keep a strict schedule or commute from one location to another. Additionally, you not only save time but also money that may be used for other objectives. The virtual classroom is accessible from anywhere there is an internet connection, so traveling is an excellent way to benefit from this. For instance, online education is a fantastic option if you're studying overseas and want to find employment. There is no reason to abandon your career or studies when traveling to new and unusual locations.</p>
-                    <div class="row pt-3 mx-0">
-                        <div class="col-3 px-0">
-                            <div class="bg-success text-center p-4">
-                                <h1 class="text-white" data-toggle="counter-up">50</h1>
-                                <h6 class="text-uppercase text-white">Available<span class="d-block">Subjects</span></h6>
-                            </div>
-                        </div>
-                        <div class="col-3 px-0">
-                            <div class="bg-primary text-center p-4">
-                                <h1 class="text-white" data-toggle="counter-up">123</h1>
-                                <h6 class="text-uppercase text-white">Online<span class="d-block">Courses</span></h6>
-                            </div>
-                        </div>
-                        <div class="col-3 px-0">
-                            <div class="bg-secondary text-center p-4">
-                                <h1 class="text-white" data-toggle="counter-up">40</h1>
-                                <h6 class="text-uppercase text-white">Skilled<span class="d-block">Instructors</span></h6>
-                            </div>
-                        </div>
-                        <div class="col-3 px-0">
-                            <div class="bg-warning text-center p-4">
-                                <h1 class="text-white" data-toggle="counter-up">1000</h1>
-                                <h6 class="text-uppercase text-white">Happy<span class="d-block">Students</span></h6>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            <a href="" class="btn btn-primary px-4">Profile</a>
+        </div>
+
+    </nav>
+</div>
+
+<!-- About Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-100" th:src="@{~/images/picture.jpg}" style="object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="section-title position-relative mb-4">
+                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">About us</h6>
+                    <h1 class="display-4">First Choice For Online Education Anywhere</h1>
+                </div>
+                <p>You can learn or teach using online courses from any location in the world. As a result, there is no need to keep a strict schedule or commute from one location to another. Additionally, you not only save time but also money that may be used for other objectives. The virtual classroom is accessible from anywhere there is an internet connection, so traveling is an excellent way to benefit from this. For instance, online education is a fantastic option if you're studying overseas and want to find employment. There is no reason to abandon your career or studies when traveling to new and unusual locations.</p>
                 </div>
             </div>
         </div>
     </div>
-    <!-- About End -->
+</div>
+<!-- About End -->
 
 
-    <!-- Feature Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-lg-7 mb-5 mb-lg-0">
-                    <div class="section-title position-relative mb-4">
-                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Why Choose Us?</h6>
-                        <h1 class="display-4">How we started</h1>
+<!-- Feature Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-7 mb-5 mb-lg-0">
+                <div class="section-title position-relative mb-4">
+                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Why Choose Us?</h6>
+                    <h1 class="display-4">How we started</h1>
+                </div>
+                <p class="mb-4 pb-2">From an early age, Educare founder Nabin, Prabisha, Aakash, Rabi and Tusali knew learning was the key to unlocking opportunity.</p>
+                <div class="d-flex mb-3">
+                    <div class="btn-icon bg-primary mr-4">
+                        <i class="fa fa-2x fa-graduation-cap text-white"></i>
                     </div>
-                    <p class="mb-4 pb-2">From an early age, Educare founder Nabin, Prabisha, Aakash, Rabi and Tusali knew learning was the key to unlocking opportunity.</p>
-                    <div class="d-flex mb-3">
-                        <div class="btn-icon bg-primary mr-4">
-                            <i class="fa fa-2x fa-graduation-cap text-white"></i>
-                        </div>
-                        <div class="mt-n1">
-                            <h4>Skilled Instructors</h4>
-                            <p>Labore rebum duo est Sit dolore eos sit tempor eos stet, vero vero clita magna kasd no nonumy et eos dolor magna ipsum.</p>
-                        </div>
-                    </div>
-                    <div class="d-flex mb-3">
-                        <div class="btn-icon bg-secondary mr-4">
-                            <i class="fa fa-2x fa-certificate text-white"></i>
-                        </div>
-                        <div class="mt-n1">
-                            <h4>International Certificate</h4>
-                            <p>Labore rebum duo est Sit dolore eos sit tempor eos stet, vero vero clita magna kasd no nonumy et eos dolor magna ipsum.</p>
-                        </div>
-                    </div>
-                    <div class="d-flex">
-                        <div class="btn-icon bg-warning mr-4">
-                            <i class="fa fa-2x fa-book-reader text-white"></i>
-                        </div>
-                        <div class="mt-n1">
-                            <h4>Online Classes</h4>
-                            <p class="m-0">Labore rebum duo est Sit dolore eos sit tempor eos stet, vero vero clita magna kasd no nonumy et eos dolor magna ipsum.</p>
-                        </div>
+                    <div class="mt-n1">
+                        <h4>Skilled Instructors</h4>
+                        <p>Our instructors have extensive experience and training in the field, and will ensure that you have the knowledge and skills necessary to properly and responsibly handle firearms. </p>
                     </div>
                 </div>
-                <div class="col-lg-5" style="min-height: 500px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="../static/images/team-4.jpg" style="object-fit: cover;">
+                <div class="d-flex mb-3">
+                    <div class="btn-icon bg-secondary mr-4">
+                        <i class="fa fa-2x fa-certificate text-white"></i>
                     </div>
+                    <div class="mt-n1">
+                        <h4>International Certificate</h4>
+                        <p>To get certificate you have to enroll in the course and complete all the required assignments, quizzes, and exams.</p>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="btn-icon bg-warning mr-4">
+                        <i class="fa fa-2x fa-book-reader text-white"></i>
+                    </div>
+                    <div class="mt-n1">
+                        <h4>Online Classes</h4>
+                        <p class="m-0">Online classes provide students with a flexible and convenient way to learn. They allow students to access course materials, lectures, and assignments from anywhere with an internet connection, making it easy for students to fit their studies into their busy schedules.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5" style="min-height: 500px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-100" th:src="@{~/images/login.png}" style="object-fit: cover;">
                 </div>
             </div>
         </div>
     </div>
-    <!-- Feature Start -->
+</div>
+
 
 
     <div

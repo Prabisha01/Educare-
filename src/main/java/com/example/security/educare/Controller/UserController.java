@@ -28,9 +28,9 @@ public class UserController {
     private final UserService userService;
     private final ValidationAutoConfiguration validationAutoConfiguration;
 
-    @GetMapping("/landing")
+    @GetMapping("/homepage")
         public String homePage() {
-            return "landing";
+            return "homepage";
     }
 
     @GetMapping("/create")
@@ -98,6 +98,10 @@ public class UserController {
     public String viewUserBlog(Model model) {
         model.addAttribute("blog", new BlogPojo());
         return "blog";
+    }
+    @GetMapping("/about")
+    public String getAbout() {
+        return "companyProfile";
     }
 
 

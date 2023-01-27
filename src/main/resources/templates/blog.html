@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trend Blogger</title>
+    <title>Educare</title>
     <!-- Box-icon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <
-    <link href="../static/css/style.css" rel="stylesheet" />
-    <link href = "../static/css/blog.css" rel ="stylesheet" />
+    <link th:href="@{~/css/style.css}" rel="stylesheet" />
+    <link th:href = "@{~/css/blog.css}" rel ="stylesheet" />
 </head>
 <body>
 <div class="container-fluid bg-light position-relative shadow">
@@ -57,79 +56,52 @@
 <div class="post container">
     <!-- Post 1 -->
     <div class="post-box tech">
-        <img src="images/img1.jpg" alt="" class="post-img">
-        <h2 class="category">Tech</h2>
+        <img src="../static/images/EduCare.png" alt="" class="post-img">
         <a href="#" class="post-title">How to create the best UI with Figma</a>
         <span class="post-date">12 Feb 2022</span>
         <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
         <div class="profile">
-            <img src="images/testi1.jpg" alt="" class="profile-img">
             <span class="profile-name">MKHB</span>
         </div>
     </div>
     <!-- Post 2 -->
-    <div class="post-box food">
-        <img src="images/img2.jpg" alt="" class="post-img">
-        <h2 class="category">Tech</h2>
+    <div class="post-box tech">
+        <img src="../static/images/EduCare.png"  alt="" class="post-img">
         <a href="#" class="post-title">How to create the best UI with Figma</a>
         <span class="post-date">12 Feb 2022</span>
         <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
         <div class="profile">
-            <img src="images/testi1.jpg" alt="" class="profile-img">
             <span class="profile-name">MKHB</span>
         </div>
     </div>
     <!-- Post 3 -->
-    <div class="post-box food">
-        <img src="images/img3.jpg" alt="" class="post-img">
-        <h2 class="category">Food</h2>
-        <a href="#" class="post-title">How to create the best UI with Figma</a>
-        <span class="post-date">12 Feb 2022</span>
-        <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
-        <div class="profile">
-            <img src="images/testi1.jpg" alt="" class="profile-img">
-            <span class="profile-name">MKHB</span>
-        </div>
-    </div>
-    <!-- Post 4 -->
-    <div class="post-box news">
-        <img src="images/img4.jpg" alt="" class="post-img">
-        <h2 class="category">Tech</h2>
-        <a href="#" class="post-title">How to create the best UI with Figma</a>
-        <span class="post-date">12 Feb 2022</span>
-        <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
-        <div class="profile">
-            <img src="images/testi1.jpg" alt="" class="profile-img">
-            <span class="profile-name">MKHB</span>
-        </div>
-    </div>
-    <!-- Post 5 -->
     <div class="post-box tech">
-        <img src="images/img5.jpg" alt="" class="post-img">
-        <h2 class="category">Tech</h2>
+        <img src="../static/images/EduCare.png"  alt="" class="post-img">
         <a href="#" class="post-title">How to create the best UI with Figma</a>
         <span class="post-date">12 Feb 2022</span>
         <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
         <div class="profile">
-            <img src="images/testi1.jpg" alt="" class="profile-img">
             <span class="profile-name">MKHB</span>
         </div>
     </div>
-    <!-- Post 6 -->
-    <div class="post-box news">
-        <img src="images/img4.jpg" alt="" class="post-img">
-        <h2 class="category">News</h2>
-        <a href="#" class="post-title">How to create the best UI with Figma</a>
-        <span class="post-date">12 Feb 2022</span>
-        <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
-        <div class="profile">
-            <img src="images/testi1.jpg" alt="" class="profile-img">
-            <span class="profile-name">MKHB</span>
-        </div>
+
+<tbody>
+    <div class="post container">
+        <div class="post-box tech">
+            <tr th:each="blog:${blogList}">
+<!--            <img  th:src="'data:image/png;base64,'+${blog.imageBase64}" />-->
+            <a href="#" class="post-title"  th:text="${blog.title}" ></a>
+            <span class="post-date" th:text="${blog.date}" ></span>
+            <p class="post-description"th:text="${blog.content}"></p>
+            <div class="profile">
+                <span class="profile-name"  th:text="${blog.author}"></span>
+            </div>
     </div>
-    <!-- Post 7 -->
+    </div>
+</tr>
+</tbody>
 </div>
-    <!-- Post 1 -->
+
 
 
     <div
