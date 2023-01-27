@@ -44,6 +44,7 @@ public class UserController {
     @GetMapping("/course")
     public String getlland(Model model) {
         model.addAttribute("user", new UserPojo());
+
         return "Course";
     }
 
@@ -111,9 +112,8 @@ public class UserController {
     public String getUserguide() {
         return "userguide";
 
-
-
     }
+
 }
 
 
