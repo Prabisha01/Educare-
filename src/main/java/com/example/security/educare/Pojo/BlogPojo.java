@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.web.multipart.MultipartFile;
 
 @Getter
 @Setter
@@ -13,15 +14,17 @@ import lombok.Setter;
 public class BlogPojo {
     private Integer id;
     private  String author;
-    private  String topic;
+    private  String title;
     private  String date;
     private  String phoneNum;
     private  String content;
-   private  String img;
+   private MultipartFile img;
+
 
     public BlogPojo(Blog blog) {
         this.id=blog.getId();
-        this.topic=blog.getTitle();
+        this.author = blog.getAuthor();
+        this.title=blog.getTitle();
         this.date=blog.getDate();
         this.content=blog.getContent();
 

@@ -1,125 +1,220 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Educare</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Font awesome icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="@{~/img/favicon.ico}">
-
+    <!-- Box-icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link th:href="@{~/css/style.css}" rel="stylesheet" />
+    <link th:href = "@{~/css/blog.css}" rel ="stylesheet" />
 </head>
 <body>
-
-<header>
-
-<section class = "blog" id = "blog">
-    <div class = "container">
-        <div class = "title">
-            <h2>Latest Blog</h2>
-            <p>recent blogs about art & design</p>
+<div class="container-fluid bg-light position-relative shadow">
+    <nav
+            class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5"
+    >
+        <a
+                href=""
+                class="navbar-brand font-weight-bold text-secondary"
+                style="font-size: 50px"
+        >
+            <i class="flaticon-043-teddy-bear"></i>
+            <span class="text-secondary">Educare</span>
+        </a>
+        <button
+                type="button"
+                class="navbar-toggler"
+                data-toggle="collapse"
+                data-target="#navbarCollapse"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+                class="collapse navbar-collapse justify-content-between"
+                id="navbarCollapse"
+        >
+            <div class="navbar-nav font-weight-lighter mx-auto py-0">
+                <a th:href="@{~/user/homepage}" class="nav-item nav-link">Home</a>
+                <a th:href="@{~/user/about}" class="nav-item nav-link active">About</a>
+                <a th:href="@{~/Course.html}" class="nav-item nav-link">Course</a>
+                <a th:href="@{~/teams/list}" class="nav-item nav-link">Teams</a>
+                <a th:href="@{~/user/viewBlog}" class="nav-item nav-link">Blogs</a>
+                <a th:href="@{~/user/contact}" class="nav-item nav-link">Contact</a>
+                <div class="nav-item dropdown">
+                    <div class="dropdown-menu rounded-0 m-0">
+                    </div>
+                </div>
+            </div>
+            <a href="" class="btn btn-primary px-4">Profile</a>
         </div>
-        <div class = "blog-content">
-            <!-- item -->
-            <div class = "blog-item">
-                <div class = "blog-img">
-                    <img src = "images/blog-p-1.jpg" alt = "">
-                    <span><i class = "far fa-heart"></i></span>
-                </div>
-                <div class = "blog-text">
-                    <span>20 January, 2020</span>
-                    <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis libero quas ipsum laudantium nihil! Quaerat.</p>
-                    <a href = "#">Read More</a>
-                </div>
-            </div>
-            <!-- end of item -->
-            <!-- item -->
-            <div class = "blog-item">
-                <div class = "blog-img">
-                    <img src = "../static/images/picture.jpg" alt = "">
-                    <span><i class = "far fa-heart"></i></span>
-                </div>
-                <div class = "blog-text">
-                    <span>20 January, 2020</span>
-                    <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis libero quas ipsum laudantium nihil! Quaerat.</p>
-                    <a href = "#">Read More</a>
-                </div>
-            </div>
-            <!-- end of item -->
-            <!-- item -->
-            <div class = "blog-item">
-                <div class = "blog-img">
-                    <img src = "images/blog-p-3.jpg" alt = "">
-                    <span><i class = "far fa-heart"></i></span>
-                </div>
-                <div class = "blog-text">
-                    <span>20 January, 2020</span>
-                    <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis libero quas ipsum laudantium nihil! Quaerat.</p>
-                    <a href = "#">Read More</a>
-                </div>
-            </div>
-            <!-- end of item -->
-            <!-- item -->
-            <div class = "blog-item">
-                <div class = "blog-img">
-                    <img src = "images/blog-p-4.jpg" alt = "">
-                    <span><i class = "far fa-heart"></i></span>
-                </div>
-                <div class = "blog-text">
-                    <span>20 January, 2020</span>
-                    <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis libero quas ipsum laudantium nihil! Quaerat.</p>
-                    <a href = "#">Read More</a>
-                </div>
-            </div>
-            <!-- end of item -->
-            <!-- item -->
-            <div class = "blog-item">
-                <div class = "blog-img">
-                    <img src = "images/blog-p-5.jpg" alt = "">
-                    <span><i class = "far fa-heart"></i></span>
-                </div>
-                <div class = "blog-text">
-                    <span>20 January, 2020</span>
-                    <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis libero quas ipsum laudantium nihil! Quaerat.</p>
-                    <a href = "#">Read More</a>
-                </div>
-            </div>
-            <!-- end of item -->
-            <!-- item -->
-            <div class = "blog-item">
-                <div class = "blog-img">
-                    <img src = "images/blog-p-6.jpg" alt = "">
-                    <span><i class = "far fa-heart"></i></span>
-                </div>
-                <div class = "blog-text">
-                    <span>20 January, 2020</span>
-                    <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis libero quas ipsum laudantium nihil! Quaerat.</p>
-                    <a href = "#">Read More</a>
-                </div>
-            </div>
-            <!-- end of item -->
+
+    </nav>
+</div>
+
+<div class="post container">
+    <!-- Post 1 -->
+    <div class="post-box tech">
+        <img src="../static/images/EduCare.png" alt="" class="post-img">
+        <a href="#" class="post-title">How to create the best UI with Figma</a>
+        <span class="post-date">12 Feb 2022</span>
+        <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
+        <div class="profile">
+            <span class="profile-name">MKHB</span>
         </div>
     </div>
-</section>
-<!-- end of blog -->
-
-<footer>
-    <div class = "social-links">
-        <a href = "#"><i class = "fab fa-facebook-f"></i></a>
-        <a href = "#"><i class = "fab fa-twitter"></i></a>
-        <a href = "#"><i class = "fab fa-instagram"></i></a>
-        <a href = "#"><i class = "fab fa-pinterest"></i></a>
+    <!-- Post 2 -->
+    <div class="post-box tech">
+        <img src="../static/images/EduCare.png"  alt="" class="post-img">
+        <a href="#" class="post-title">How to create the best UI with Figma</a>
+        <span class="post-date">12 Feb 2022</span>
+        <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
+        <div class="profile">
+            <span class="profile-name">MKHB</span>
+        </div>
     </div>
-    <span>Art.Design Blog Page</span>
-</footer>
-<!-- end of footer -->
+    <!-- Post 3 -->
+    <div class="post-box tech">
+        <img src="../static/images/EduCare.png"  alt="" class="post-img">
+        <a href="#" class="post-title">How to create the best UI with Figma</a>
+        <span class="post-date">12 Feb 2022</span>
+        <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
+        <div class="profile">
+            <span class="profile-name">MKHB</span>
+        </div>
+    </div>
+
+<tbody>
+    <div class="post container">
+        <div class="post-box tech">
+            <tr th:each="blog:${blogList}">
+<!--            <img  th:src="'data:image/png;base64,'+${blog.imageBase64}" />-->
+            <a href="#" class="post-title"  th:text="${blog.title}" ></a>
+            <span class="post-date" th:text="${blog.date}" ></span>
+            <p class="post-description"th:text="${blog.content}"></p>
+            <div class="profile">
+                <span class="profile-name"  th:text="${blog.author}"></span>
+            </div>
+    </div>
+    </div>
+</tr>
+</tbody>
+</div>
+
+
+
+    <div
+            class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5"
+    >
+        <div class="row pt-5">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <a
+                        href=""
+                        class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0"
+                        style="font-size: 40px; line-height: 40px"
+                >
+                    <i class="flaticon-043-teddy-bear"></i>
+                    <span class="text-white">Educare</span>
+                </a>
+                <p>
+
+                    An online learning platform is a space or portal filled with educational content and/or live instruction on a particular subject or many different topics. Such platforms - also referred to as "e-learning" - are typically membership-based, but there are other options where users can jump in and learn immediately without registerition
+                </p>
+                <div class="d-flex justify-content-start mt-4">
+                    <a
+                            class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                            style="width: 38px; height: 38px"
+                            href="#"
+                    ><i class="fab fa-twitter"></i
+                    ></a>
+                    <a
+                            class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                            style="width: 38px; height: 38px"
+                            href="#"
+                    ><i class="fab fa-facebook-f"></i
+                    ></a>
+                    <a
+                            class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                            style="width: 38px; height: 38px"
+                            href="#"
+                    ><i class="fab fa-linkedin-in"></i
+                    ></a>
+                    <a
+                            class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                            style="width: 38px; height: 38px"
+                            href="#"
+                    ><i class="fab fa-instagram"></i
+                    ></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h3 class="text-primary mb-4">Stay with us</h3>
+                <div class="d-flex">
+                    <h4 class="fa fa-map-marker-alt text-primary"></h4>
+                    <div class="pl-3">
+                        <h5 class="text-white">Address</h5>
+                        <p>Dillibazar, Kathmandu, Nepal</p>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <h4 class="fa fa-envelope text-primary"></h4>
+                    <div class="pl-3">
+                        <h5 class="text-white">Email</h5>
+                        <p>wrabwagle123@gamail.com</p>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <h4 class="fa fa-phone-alt text-primary"></h4>
+                    <div class="pl-3">
+                        <h5 class="text-white">Phone</h5>
+                        <p>+012 345 67890</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h3 class="text-primary mb-4">Quick Links</h3>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-white mb-2" href="#"
+                    ><i class="fa fa-angle-right mr-2"></i>Home</a
+                    >
+                    <a class="text-white mb-2" href="ab.html"
+                    ><i class="fa fa-angle-right mr-2"></i>About Us</a
+                    >
+                    <a class="text-white mb-2" href="Course.html"
+                    ><i class="fa fa-angle-right mr-2"></i>Our Course</a
+                    >
+                    <a class="text-white mb-2" href="#"
+                    ><i class="fa fa-angle-right mr-2"></i>Experts</a
+                    >
+                    <a class="text-white mb-2" href="#"
+                    ><i class="fa fa-angle-right mr-2"></i>Our Blog</a
+                    >
+                    <a class="text-white mb-2" href="#"
+                    ><i class="fa fa-angle-right mr-2"></i>Contact Us</a
+                    >
+                    <a class="text-white mb-2" href="#"
+                    ><i class="fa fa-angle-right mr-2"></i>FAQ</a
+                    >
+                    <a class="text-white mb-2 " href="#"
+                    ><i class="fa fa-angle-right mr-2"></i>Events</a
+                    >
+
+
+                </div>
+            </div>
+
+            <div
+                    class="container-fluid pt-5"
+                    style="border-top: 1px solid rgba(23, 162, 184, 0.2) ;"
+            >
+
+            </div>
+        </div>
+
+        <a href="#" class="btn btn-primary p-3 back-to-top"
+        ><i class="fa fa-angle-double-up"></i
+        ></a>
 
 
 </body>

@@ -1,5 +1,6 @@
 package com.example.security.educare.Controller;
 
+import com.example.security.educare.Pojo.BlogPojo;
 import com.example.security.educare.Pojo.ContactPojo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -25,5 +26,16 @@ public class homepageController {
     public String getAbout() {
         return "companyProfile";
     }
+
+    @GetMapping("/userguide")
+    public String getGuide() {
+        return "userguide";
+    }
+    @GetMapping("/viewBlog")
+    public String viewUserBlog(Model model) {
+        model.addAttribute("blog", new BlogPojo());
+        return "blog";
+    }
+
 
 }
