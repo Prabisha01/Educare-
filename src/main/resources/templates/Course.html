@@ -251,7 +251,70 @@
         </div>
       </div>
     </div>
-    <!-- Class End -->
+    <!-- Popular Class End -->
+
+
+    <div class="text-center pb-2">
+    <h1 class="mb-4">Other Course</h1>
+      <div class="row">
+<!--        Loop start for backend datafetch-->
+
+        <tr th:each="course:${courseList}">
+
+        <div class="col-lg-4 mb-5">
+          <div class="card border-0 bg-light shadow-sm pb-2">
+            <img class="card-img-top mb-2" th:src="@{~/images/Python.png}" alt="" />
+            <div class="card-body text-center">
+              <h4 class="card-title">
+                <td th:text="${course.coursename}"></td>
+              </h4>
+              <p class="card-text">
+                Python is a high-level, general-purpose programming language.
+                Its design philosophy emphasizes code readability with the use of significant indentation.
+              </p>
+            </div>
+            <div class="card-footer bg-transparent py-4 px-5">
+              <div class="row border-bottom">
+                <div class="col-6 py-1 text-right border-right">
+                  <strong>Duration</strong>
+                </div>
+                <div class="col-6 py-1"><td th:text="${course.duration}"></td></div>
+              </div>
+              <div class="row border-bottom">
+                <div class="col-6 py-1 text-right border-right">
+                  <strong>Available</strong>
+                </div>
+                <div class="col-6 py-1">Yes</div>
+              </div>
+              <div class="row border-bottom">
+                <div class="col-6 py-1 text-right border-right">
+                  <strong>Certificate</strong>
+                </div>
+                <div class="col-6 py-1">Pass Quiz</div>
+              </div>
+              <div class="row">
+                <div class="col-6 py-1 text-right border-right">
+                  <strong> Fee</strong>
+                </div>
+                <div class="col-6 py-1"><td th:text="${course.fee}"></td></div>
+              </div>
+            </div>
+            <a href="Python.html" class="btn btn-primary px-4 mx-auto mb-4">Join Now</a>
+          </div>
+        </div>
+        </tr>
+        <!--      Run the backend div here-->
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
 
     <!-- Registration Start -->
     <div class="container-fluid py-5">

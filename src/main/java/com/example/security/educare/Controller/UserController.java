@@ -38,15 +38,7 @@ public class UserController {
         model.addAttribute("user", new UserPojo());
         return "signup";
 
-
         }
-
-    @GetMapping("/course")
-    public String getlland(Model model) {
-        model.addAttribute("user", new UserPojo());
-        return "Course";
-    }
-
 
     @GetMapping("/edit/{id}")
     public String editUser(@PathVariable("id") Integer id, Model model) {
@@ -77,9 +69,6 @@ public class UserController {
         }
 
         return "redirect:user/homepage";
-
-
-
     }
 
     @GetMapping("/contact")
@@ -103,7 +92,6 @@ public class UserController {
     public String getAbout() {
         return "companyProfile";
     }
-
 
 
 }
