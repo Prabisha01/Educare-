@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>CourseName</th>
+        <th>Duration</th>
+        <th>Fee</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="course:${courseList}">
+        <td th:text="${course.coursename}"></td>
+        <td th:text="${course.duration}"></td>
+        <td th:text="${course.fee}"></td>
+        <td>
+            <a th:href="@{~/course/edit/}+${course.id}">Edit</a> |
+            <a th:href="@{~/course/delete/}+${course.id}">Delete</a>
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

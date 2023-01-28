@@ -1,6 +1,7 @@
 package com.example.security.educare.Services.Impl;
 
 import com.example.security.educare.Entity.Course;
+import com.example.security.educare.Entity.Teams;
 import com.example.security.educare.Pojo.CoursePojo;
 
 import com.example.security.educare.Repo.CourseRepo;
@@ -17,7 +18,13 @@ import java.util.List;
 public class CourseServiceImpl implements CourseService {
     public final CourseRepo courseRepo;
 
-            public String saveUser(CoursePojo coursePojo) {
+
+    @Override
+    public Course fetchById(Integer id) {
+        return null;
+    }
+
+    public String saveUser(CoursePojo coursePojo) {
                 Course user=new Course();
                 user.setCoursename(coursePojo.getCourseName());
                 user.setDuration(coursePojo.getDuration());
@@ -31,4 +38,8 @@ public class CourseServiceImpl implements CourseService {
             public List<Course> fetchAll() {
                 return courseRepo.findAll();
             }
+    @Override
+    public void deleteById(Integer id) {
+        courseRepo.deleteById(id);
+    }
         };

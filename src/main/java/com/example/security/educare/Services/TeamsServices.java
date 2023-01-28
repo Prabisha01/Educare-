@@ -8,7 +8,11 @@ import com.example.security.educare.Pojo.UserPojo;
 import java.util.List;
 
 public interface TeamsServices {
+    Teams fetchById(Integer id) ;
+
     String saveUser(TeamsPojo teamsPojo);
     List<Teams> fetchAll();
+
+    void deleteById(Integer id);
 
 }

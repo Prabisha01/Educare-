@@ -37,7 +37,6 @@ import org.springframework.security.core.userdetails.UserDetails;
         @Column(nullable = false)
         private String password;
 
-
-        @Column(name = "mobile_no")
+        @Column(name = "mobile_no", nullable=false)
         private String mobileNo;
 }

@@ -58,7 +58,7 @@ public class UserController {
     @PostMapping("/save")
     public String saveUser(@Valid UserPojo userPojo) {
         userService.saveUser(userPojo);
-        return "redirect:/user/list"; // router ko path
+        return "redirect:/user/list";
     }
 
     @GetMapping("/login")
@@ -67,7 +67,6 @@ public class UserController {
         if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
             return "/login";
         }
-
         return "redirect:user/homepage";
     }
 
@@ -92,6 +91,8 @@ public class UserController {
     public String getAbout() {
         return "companyProfile";
     }
+
+
 
 
 }

@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -32,11 +33,27 @@ public class coursecontroller {
         return "Course";  // Should make pop for Saved sucessfully
     }
 
-    @GetMapping("/Course")
+    @GetMapping("/list")
     public String getUserList(Model model) {
         List<Course> course = courseService.fetchAll();
         model.addAttribute("courseList", course);
-        return "Course";
+        return "courseList";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String editUser(@PathVariable("id") Integer id, Model model) {
+        Course course = courseService.fetchById(id);
+
+        model.addAttribute("team", new CoursePojo(course));
+        return "/course/create";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteuser(@PathVariable("id") Integer id) {
+        System.out.println("delete");
+        courseService.deleteById(id);
+        return "redirect:/course/list";
+
     }
 
 }

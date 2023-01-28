@@ -1,7 +1,6 @@
 package com.example.security.educare.Services.Impl;
 
 import com.example.security.educare.Entity.Teams;
-import com.example.security.educare.Entity.User;
 import com.example.security.educare.Pojo.TeamsPojo;
 import com.example.security.educare.Repo.TeamsRepo;
 import com.example.security.educare.Services.TeamsServices;
@@ -15,6 +14,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class TeamsServiceImpl implements TeamsServices {
 public final TeamsRepo teamsRepo;
+
+
+
     @Override
     public String saveUser(TeamsPojo teamsPojo) {
         Teams user = new Teams();
@@ -34,7 +36,18 @@ public final TeamsRepo teamsRepo;
     }
 
     @Override
+    public Teams fetchById(Integer id) {
+        return null;
+    }
+
+    @Override
     public List<Teams> fetchAll() {
         return teamsRepo.findAll();
     }
+    @Override
+    public void deleteById(Integer id) {
+        teamsRepo.deleteById(id);
+    }
+
+
 }
