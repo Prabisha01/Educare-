@@ -22,7 +22,7 @@ public  class Course{
     @SequenceGenerator(name = "gp_user_seq_gen", sequenceName = "gp_user_id_seq", allocationSize = 1)
     @GeneratedValue(generator = "gp_user_seq_gen", strategy = GenerationType.SEQUENCE)
     private Integer id;
-    @Column(name="coursename", nullable = false)
+    @Column(nullable = false)
     private String coursename;
 
     @Column(nullable = false)

@@ -29,10 +29,10 @@ public class coursecontroller {
     @PostMapping("/save")
     public String saveUser(@Valid CoursePojo coursePojo) {
         courseService.saveUser(coursePojo);
-        return "Course";
+        return "Course";  // Should make pop for Saved sucessfully
     }
 
-    @GetMapping("/list")
+    @GetMapping("/Course")
     public String getUserList(Model model) {
         List<Course> course = courseService.fetchAll();
         model.addAttribute("courseList", course);

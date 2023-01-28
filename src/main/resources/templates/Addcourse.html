@@ -25,8 +25,8 @@
 <body>
 <div class="container">
     <h1>Add Teams</h1>
-    <form class="form-horizontal" role="form" th:method="post" th:action="@{/teams/save}" th:object="${teams}" >
-        <input type="text" hidden placeholder="UserId..." th:field="*{id}" th:value="${teams.id}" >
+    <form class="form-horizontal" role="form" th:method="post" th:action="@{~/course/save}" th:object="${course}" >
+        <input type="text" hidden placeholder="UserId..." th:field="*{id}" th:value="${course.id}" >
         <div class="form-group">
             <label for="name1" class="col-sm-2 control-label">CourseName:</label>
             <div class="col-sm-4">
