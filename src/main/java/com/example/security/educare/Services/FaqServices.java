@@ -6,8 +6,9 @@ import com.example.security.educare.Pojo.FaqPojo;
 import java.util.List;
 
 public interface FaqServices {
-        String saveUser(FaqPojo FaqPojo);
+        String saveUser(FaqPojo faqPojo);
         List<Faq> fetchAll();
-
+        Faq fetchById(Integer id);
+        void deleteById(Integer id);
 
 }

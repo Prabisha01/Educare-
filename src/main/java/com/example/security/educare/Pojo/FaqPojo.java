@@ -1,4 +1,5 @@
 package com.example.security.educare.Pojo;
+import com.example.security.educare.Entity.Faq;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,12 +15,13 @@ public class FaqPojo {
     private String question;
     private String answer;
 
-    public FaqPojo(FaqPojo user){
-        this.id= user.getId();
-        this.question=user.getQuestion();
-        this.answer=user.getAnswer();
+    public FaqPojo(Faq faq){
+        this.id= faq.getId();
+        this.question=faq.getQuestion();
+        this.answer=faq.getAnswer();
 
 
     }
+
 
 }
