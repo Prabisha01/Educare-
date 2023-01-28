@@ -29,8 +29,8 @@ public class UserController {
     private final ValidationAutoConfiguration validationAutoConfiguration;
 
     @GetMapping("/homepage")
-        public String homePage() {
-            return "homepage";
+    public String homePage() {
+        return "homepage";
     }
 
     @GetMapping("/create")
@@ -38,7 +38,7 @@ public class UserController {
         model.addAttribute("user", new UserPojo());
         return "signup";
 
-        }
+    }
 
     @GetMapping("/edit/{id}")
     public String editUser(@PathVariable("id") Integer id, Model model) {
@@ -54,7 +54,8 @@ public class UserController {
         userService.deleteById(id);
         return "redirect:/user/list";
 
-        }
+    }
+
     @PostMapping("/save")
     public String saveUser(@Valid UserPojo userPojo) {
         userService.saveUser(userPojo);
@@ -88,12 +89,29 @@ public class UserController {
         model.addAttribute("blog", new BlogPojo());
         return "blog";
     }
+
     @GetMapping("/about")
     public String getAbout() {
         return "companyProfile";
     }
 
+    @GetMapping("/course")
+    public String getCourse() {
+        return "Course";
+    }
 
+    @GetMapping("/python")
+    public String getPython() {
+        return "Python";
+    }
+    @GetMapping("/quiz")
+    public String getquiz() {
+        return "Quiz_python";
+    }
+    @GetMapping("/userguide")
+    public String getGuide() {
+        return "userguide";
+    }
 }
 
 
