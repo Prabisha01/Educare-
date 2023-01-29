@@ -3,27 +3,17 @@ body{
     flex-direction: column;
     /* align-items: center; */
 }
-.notice-upload{
-    display: flex;
-    margin-top: 5%;
-    flex-direction: column;
-}
-h1{
-    align-self: center;
-}
+
 .upload_blog{
     display: flex;
 }
-.upload_notice{
-    display: flex;
-}
+
 form {
     width: 50%;
     margin: 0 auto;
     padding: 20px;
-    border-radius: 10px;
-    border: 1px solid rgb(180, 174, 174);
-    box-sizing: border-box;
+
+
 
 }
 @media (max-width: 720px) {
@@ -33,13 +23,16 @@ form {
 }
 
 input[type=text], textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
+    padding: 10px;
+    width: 400px;
+    border: solid 1px #B3FFB3;
+    outline: 0;
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #A4FFA4), to(#FFFFFF));
+    background: -moz-linear-gradient(top, #FFFFFF, #A4FFA4 1px, #FFFFFF 25px);
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+
 }
 
 button[type=submit] {

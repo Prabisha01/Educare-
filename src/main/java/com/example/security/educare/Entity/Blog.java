@@ -1,11 +1,10 @@
 package com.example.security.educare.Entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jdk.jshell.Snippet;
+import lombok.*;
 
+@Builder
 @Getter
 @Setter
 @AllArgsConstructor
@@ -31,7 +30,11 @@ public class Blog {
     @Column(name = "content")
     private String content;
 
+    public String image;
 
-//    public String getImg() {
-    }
+    @Transient
+    private String imageBase64;
+
+
+}
 

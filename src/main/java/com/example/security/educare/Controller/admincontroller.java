@@ -25,5 +25,9 @@ public class admincontroller {
     private final UserService userService;
     private final BlogServices blogServices;
 
+    @GetMapping("/admin_profile")
+    public String getAdminProfile(Model model){
+        return "admin";
+    }
 
 }

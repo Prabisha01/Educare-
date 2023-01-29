@@ -17,7 +17,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class FaqServiceImpl  implements FaqServices {
+public class FaqServiceImpl implements FaqServices {
     private  final FaqRepo faqRepo;
 
     @Override
@@ -34,5 +34,14 @@ public class FaqServiceImpl  implements FaqServices {
         return faqRepo.findAll();
     }
 
+    @Override
+    public Faq fetchById(Integer id) {
+        return faqRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+      faqRepo.deleteById(id);
+    }
 
 }

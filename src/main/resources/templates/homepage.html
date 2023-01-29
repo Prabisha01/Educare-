@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -42,7 +42,7 @@
             <div class="navbar-nav font-weight-lighter mx-auto py-0">
                 <a th:href="@{~/user/homepage}" class="nav-item nav-link">Home</a>
                 <a th:href="@{~/user/about}" class="nav-item nav-link active">About</a>
-                <a th:href="@{~/Course.html}" class="nav-item nav-link">Course</a>
+                <a th:href="@{~/user/course}" class="nav-item nav-link">Course</a>
                 <a th:href="@{~/teams/list}" class="nav-item nav-link">Teams</a>
                 <a th:href="@{~/user/viewBlog}" class="nav-item nav-link">Blogs</a>
                 <a th:href="@{~/user/contact}" class="nav-item nav-link">Contact</a>
@@ -65,7 +65,7 @@
             </h3>
             <p>Watch the available videos to learn</p>
             <div class="btn-wrapper">
-                <button th:href = "@{~/userguide}" class="UserGuide">UserGuide</button>
+                <button th:href = "@{~/user/userguide}" class="UserGuide">UserGuide</button>
             </div>
         </div>
         <div class="img">
@@ -229,6 +229,22 @@
     ><i class="fa fa-angle-double-up"></i
     ></a>
 </div>
+<<<<<<< HEAD
 </form>
+=======
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/63d50e38c2f1ac1e20301142/1gns3v408';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
+<!--End of Tawk.to Script-->
+>>>>>>> dbab59978c59b66597a4783ccfcbdc84c48c41ab
 </body>
 </html>

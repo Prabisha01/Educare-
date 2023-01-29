@@ -38,6 +38,14 @@ public class homepageController {
         model.addAttribute("blog", new BlogPojo());
         return "blog";
     }
+    @GetMapping("/course")
+    public String getCourse() {
+        return "Course";
+    }
 
+    @GetMapping("/quiz")
+    public String getquiz() {
+        return "Quiz_python";
+    }
 
 }

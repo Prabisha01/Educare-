@@ -8,41 +8,49 @@ import com.example.security.educare.Services.BlogServices;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
+
 
 @Service
 @RequiredArgsConstructor
 public class BlogServicesImpl implements BlogServices {
-    private  final BlogRepo blogRepo;
+    private final BlogRepo blogRepo;
+    public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/educareimage/";
+
 
     @Override
-    public String save(BlogPojo blogPojo) {
-        Blog blog =new Blog();
-        if(blogPojo.getId()!=null){
-            blog.setId(blogPojo.getId());
+    public BlogPojo save(BlogPojo blogPojo) throws IOException {
+        Blog blog;
+        if (blogPojo.getId() != null) {
+            blog = blogRepo.findById(blogPojo.getId()).orElseThrow(() -> new RuntimeException("Not Found"));
+        } else {
+            blog = new Blog();
         }
         blog.setAuthor(blogPojo.getAuthor());
+        blog.setTitle(blogPojo.getTitle());
         blog.setDate(blogPojo.getDate());
-        blog.setContent(blogPojo.getContent());
+        blog.setContent(blog.getContent());
+
+        if(blogPojo.getImg()!=null){
+            StringBuilder fileNames = new StringBuilder();
+            System.out.println(UPLOAD_DIRECTORY);
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, blogPojo.getImg().getOriginalFilename());
+            fileNames.append(blogPojo.getImg().getOriginalFilename());
+            Files.write(fileNameAndPath, blogPojo.getImg().getBytes());
+
+            blog.setImage(blogPojo.getImg().getOriginalFilename());
+        }
         blogRepo.save(blog);
-        return null;
+        return new BlogPojo(blog);
     }
+
 
     @Override
     public List<Blog> fetchAll() {
         return blogRepo.findAll();
-
     }
-
-    @Override
-    public Blog fetchById(Integer id) {
-        return blogRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
-
-    }
-
-    @Override
-    public void deleteById(Integer id) {
-        blogRepo.deleteById(id);
-    }
-
 }

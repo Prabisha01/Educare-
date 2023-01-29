@@ -28,9 +28,9 @@ public class  UserController {
     private final UserService userService;
     private final ValidationAutoConfiguration validationAutoConfiguration;
 
-    @GetMapping("/landing")
-        public String homePage() {
-            return "landing";
+    @GetMapping("/homepage")
+    public String homePage() {
+        return "homepage";
     }
 
 
@@ -40,15 +40,7 @@ public class  UserController {
         model.addAttribute("user", new UserPojo());
         return "signup";
 
-
-        }
-
-    @GetMapping("/course")
-    public String getlland(Model model) {
-        model.addAttribute("user", new UserPojo());
-        return "Course";
     }
-
 
     @GetMapping("/edit/{id}")
     public String editUser(@PathVariable("id") Integer id, Model model) {
@@ -64,7 +56,8 @@ public class  UserController {
         userService.deleteById(id);
         return "redirect:/user/list";
 
-        }
+    }
+
     @PostMapping("/save")
     public String saveUser(@Valid UserPojo userPojo) {
         userService.saveUser(userPojo);
@@ -79,8 +72,12 @@ public class  UserController {
             return "/login";
         }
 
+<<<<<<< HEAD
         return "redirect:/user/home";
 
+=======
+        return "redirect:user/homepage";
+>>>>>>> dbab59978c59b66597a4783ccfcbdc84c48c41ab
     }
 
 //    @GetMapping("/home")
@@ -107,12 +104,34 @@ public class  UserController {
         return "blog";
     }
 
+<<<<<<< HEAD
     @GetMapping("/homepage")
     public String Page() {
         return "homepage";
+=======
+    @GetMapping("/about")
+    public String getAbout() {
+        return "companyProfile";
+>>>>>>> dbab59978c59b66597a4783ccfcbdc84c48c41ab
     }
 
+    @GetMapping("/course")
+    public String getCourse() {
+        return "Course";
+    }
 
+    @GetMapping("/python")
+    public String getPython() {
+        return "Python";
+    }
+    @GetMapping("/quiz")
+    public String getquiz() {
+        return "Quiz_python";
+    }
+    @GetMapping("/userguide")
+    public String getGuide() {
+        return "userguide";
+    }
 }
 
 

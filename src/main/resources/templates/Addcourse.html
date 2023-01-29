@@ -1,41 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--    Using Cdn -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="../Static/css/style.css">
-  
+
+    <style>
+        .inputstl {
+            padding: 9px;
+            border: solid 1px #B3FFB3;
+            outline: 0;
+            background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #A4FFA4), to(#FFFFFF));
+            background: -moz-linear-gradient(top, #FFFFFF, #A4FFA4 1px, #FFFFFF 25px);
+            box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+            -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+            -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+
+        }
+
+    </style>
+
 </head>
 
 <body>
-    <div class="AddTeams">  
-    <input type="hidden" id="id" />  
-    <b>Course:</b><input type="text" id="firstName" /><br />  
-    <b>Course ID:</b><input type="text" id="lastName" /><br />  
-    <b>Types:</b><input type="text" id="city" /><br />  
-    <b>Blank:</b><input type="text" id="state" /><br />  
-    <b>Time:</b>  
-    <input type="text" id="phone" /><br />  
-    <b>Blank:</b><input type="text" id="email" /><br />  
+<div class="container">
+    <h1>Add Teams</h1>
+    <form class="form-horizontal" role="form" th:method="post" th:action="@{~/course/save}" th:object="${course}" >
+        <input type="text" hidden placeholder="UserId..." th:field="*{id}" th:value="${course.id}" >
+        <div class="form-group">
+            <label for="name1" class="col-sm-2 control-label">CourseName:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control inputstl" id="name1" placeholder="Enter CourseName" th:field="*{courseName}" th:value="${course.courseName}">
+            </div>
+        </div>
 
-    <button class="batn" onclick="InsertData()">Insert Data</button>  
-    <button class="batn1" onclick="UpdateData()">Update Data</button>  
-    <button class="batn2" onclick="ClearData()">Clear</button>
 
-<script>  
-    var id = document.getElementById('id');  
-    var firstName = document.getElementById('firstName');  
-    var city = document.getElementById('city');  
-    var state = document.getElementById('state');  
-    var email = document.getElementById('email');  
-    var lastName = document.getElementById('lastName');  
-    var phone = document.getElementById('phone');  
-    var results = document.getElementById('details');  
-</script> 
+        <div class="form-group">
+            <label for="name1" class="col-sm-2 control-label">Duration:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control inputstl" id="name5" placeholder="Duration" th:field="*{duration}" th:value="${course.duration}">
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name1" class="col-sm-2 control-label">Fee:</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control inputstl" id="name4" placeholder="Enter Fee" th:field="*{fee}" th:value="${course.fee}">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-4">
+                <button type="submit" class="btn btn-lg btn-block btn-success">Add new</button>
+            </div>
+        </div>
+    </form>
 </div>
-
 </body>
 </html>
+
