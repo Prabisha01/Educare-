@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/homepage")
 public class homepageController {
 
-
-
+//    @GetMapping("/home")
+//    public String gethome() {
+//        return "homepage";
+//    }
     @GetMapping("/contact")
     public String getPage( Model model){
         model.addAttribute("contact", new ContactPojo());

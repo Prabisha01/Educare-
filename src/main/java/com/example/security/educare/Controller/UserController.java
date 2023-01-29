@@ -24,7 +24,7 @@ import java.util.List;
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/user")
-public class UserController {
+public class  UserController {
     private final UserService userService;
     private final ValidationAutoConfiguration validationAutoConfiguration;
 
@@ -32,6 +32,8 @@ public class UserController {
         public String homePage() {
             return "landing";
     }
+
+
 
     @GetMapping("/create")
     public String createUser(Model model) {
@@ -66,21 +68,26 @@ public class UserController {
     @PostMapping("/save")
     public String saveUser(@Valid UserPojo userPojo) {
         userService.saveUser(userPojo);
-        return "redirect:/user/list"; // router ko path
+        return "redirect:/user/login"; // router ko path
     }
 
     @GetMapping("/login")
-    public String showLoginPage() {
+    public String showLoginPage(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+            model.addAttribute("user", new UserPojo());
             return "/login";
         }
 
-        return "redirect:user/homepage";
-
-
+        return "redirect:/user/home";
 
     }
+
+//    @GetMapping("/home")
+//    public String homepage(Model model) {
+////        model.addAttribute("home", new UserPojo());
+//        return "redirect:/user/login";
+//    }
 
     @GetMapping("/contact")
     public String getPage(Model model) {
@@ -100,6 +107,10 @@ public class UserController {
         return "blog";
     }
 
+    @GetMapping("/homepage")
+    public String Page() {
+        return "homepage";
+    }
 
 
 }
