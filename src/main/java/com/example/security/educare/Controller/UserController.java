@@ -24,7 +24,7 @@ import java.util.List;
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/user")
-public class UserController {
+public class  UserController {
     private final UserService userService;
     private final ValidationAutoConfiguration validationAutoConfiguration;
 
@@ -32,6 +32,8 @@ public class UserController {
     public String homePage() {
         return "homepage";
     }
+
+
 
     @GetMapping("/create")
     public String createUser(Model model) {
@@ -59,17 +61,37 @@ public class UserController {
     @PostMapping("/save")
     public String saveUser(@Valid UserPojo userPojo) {
         userService.saveUser(userPojo);
+<<<<<<< HEAD
         return "redirect:/user/list";
+=======
+        return "redirect:/user/login"; // router ko path
+>>>>>>> a7644bc523cec83b7be8eec18888ee5b87123962
     }
 
     @GetMapping("/login")
-    public String showLoginPage() {
+    public String showLoginPage(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+            model.addAttribute("user", new UserPojo());
             return "/login";
         }
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+        return "redirect:/user/home";
+
+=======
+>>>>>>> a7644bc523cec83b7be8eec18888ee5b87123962
         return "redirect:user/homepage";
+>>>>>>> dbab59978c59b66597a4783ccfcbdc84c48c41ab
     }
+
+//    @GetMapping("/home")
+//    public String homepage(Model model) {
+////        model.addAttribute("home", new UserPojo());
+//        return "redirect:/user/login";
+//    }
 
     @GetMapping("/contact")
     public String getPage(Model model) {
@@ -89,9 +111,15 @@ public class UserController {
         return "blog";
     }
 
+<<<<<<< HEAD
+    @GetMapping("/homepage")
+    public String Page() {
+        return "homepage";
+=======
     @GetMapping("/about")
     public String getAbout() {
         return "companyProfile";
+>>>>>>> dbab59978c59b66597a4783ccfcbdc84c48c41ab
     }
 
     @GetMapping("/course")

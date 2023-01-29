@@ -4,7 +4,7 @@ var attempt = 3; // Variable to count number of attempts.
 function validate(){
     var username = document.getElementById("user").value;
     var password = document.getElementById("pws").value;
-    if ( username == "admin" && password == "admin"){
+    if ( username == " " && password == " "){
         alert ("Login successfully");
         window.location = "homepage.html"; // Redirecting to other page.
         return false;
@@ -20,4 +20,11 @@ function validate(){
             return false;
         }
     }
+//     var username = document.getElementById("user").value;
+//     var password = document.getElementById("pws").value;
+//     if (username == "" || password == "") {
+//         alert("Both fields must be filled out");
+//         return false;
+//     }
+//     return true;
 }

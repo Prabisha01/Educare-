@@ -29,6 +29,7 @@
     .customclas{
         box-shadow: 0px 15px 10px -15px #111;
     }</style>
+    <script th:src="@{~/javascript/Login.js}"></script>
 </head>
 <body>
 
@@ -47,16 +48,16 @@
             <h1 class="d-grid text-center  pt-2 pb-2">Sign in</h1>
             <div class=" mycustom d-flex justify-content-around  ">
 
-                <form th:method="post" th:action="@{/user/login}" >
+                <form th:method="post" th:action="@{/user/login}" th:object="${user}" >
                     <div class="row  p-0 m-0  ">
                         <div class="col-xl-12 form-group ">
                             <label class="pb-2 pt-2" >Username</label>
-                            <input type="text" class="form-control " placeholder="Username"  name ="username" required >
+                            <input  id ="user" type="text" class="form-control " placeholder="Username"  name ="username"  required >
                         </div>
                         <div class="col-xl-12 form-group ">
                             <div class="form-group">
                                 <label class="pb-2 pt-2">Password</label>
-                                <input type="password" class="form-control " placeholder="********"  name = "password" required >
+                                <input id="pws" type="password" class="form-control " placeholder="********"  name = "password" required >
                             </div>
                         </div>
 
@@ -73,7 +74,7 @@
                     <div class="  p-0 m-0 pt-1 pb-0">
                         <div class="signup-btn pb-1 text-center ">
                             <div/>
-                            <button>Login</button>
+                            <button type=button onclick="validate()">Login</button>
                         </div>
                         <div class="text-center ">
                             <a href="forgetpassword.html">Forgot password?</a>
