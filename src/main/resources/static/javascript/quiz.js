@@ -13,7 +13,7 @@ const quizData=[
         b: "b. No",
         c: "c. Can be yes or no",
         d: "d. none of them",
-        correct: "A",
+        correct: "a",
     },
 
     {
@@ -26,7 +26,7 @@ const quizData=[
     },
 
     {
-        question: "Dart programs run in _______ modes ?",
+        question: "Q4. Dart programs run in _______ modes ?",
         a: "a. 2",
         b: "b. 3",
         c: "c. 4",
