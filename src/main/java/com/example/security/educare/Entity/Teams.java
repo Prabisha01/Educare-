@@ -12,7 +12,6 @@ import org.springframework.security.core.userdetails.UserDetails;
     @NoArgsConstructor
     @Entity
     @Table(name = "teams")
-
     public class Teams{
         @Id
         @SequenceGenerator(name = "gp_user_seq_gen", sequenceName = "gp_user_id_seq", allocationSize = 1)

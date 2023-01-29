@@ -32,20 +32,30 @@ public class teamcontroller {
     @PostMapping("/save")
     public String saveUser(@Valid TeamsPojo teamsPojo) {
         teamsServices.saveUser(teamsPojo);
-        return "Teams";  //Write the pop box of sucess message
+        return "teamList";   //Write the pop box of sucess message
     }
 
-    @GetMapping("/list")
+    @GetMapping("/list")    //This is for admin side to view teams and update delete
     public String getUserList(Model model) {
         List<Teams> teams = teamsServices.fetchAll();
         model.addAttribute("teamsList", teams);
         return "teamList";
     }
 
+    @GetMapping("/teams") //This is for user side
+    public String getTeamsList(Model model) {
+        List<Teams> teams = teamsServices.fetchAll();
+        model.addAttribute("teamsList", teams);
+        return "Teams";
+    }
+
+
+
+
     @GetMapping("/edit/{id}")
     public String editUser(@PathVariable("id") Integer id, Model model) {
         Teams teams = teamsServices.fetchById(id);
-        model.addAttribute("team", new TeamsPojo(teams));
+        model.addAttribute("teams", new TeamsPojo(teams));
         return "/teams/create";
     }
 

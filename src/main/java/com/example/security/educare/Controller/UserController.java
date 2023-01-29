@@ -61,11 +61,8 @@ public class  UserController {
     @PostMapping("/save")
     public String saveUser(@Valid UserPojo userPojo) {
         userService.saveUser(userPojo);
-<<<<<<< HEAD
         return "redirect:/user/list";
-=======
-        return "redirect:/user/login"; // router ko path
->>>>>>> a7644bc523cec83b7be8eec18888ee5b87123962
+//        return "redirect:/user/login"; // router ko path
     }
 
     @GetMapping("/login")
@@ -75,16 +72,11 @@ public class  UserController {
             model.addAttribute("user", new UserPojo());
             return "/login";
         }
-<<<<<<< HEAD
-=======
 
-<<<<<<< HEAD
         return "redirect:/user/home";
 
-=======
->>>>>>> a7644bc523cec83b7be8eec18888ee5b87123962
-        return "redirect:user/homepage";
->>>>>>> dbab59978c59b66597a4783ccfcbdc84c48c41ab
+
+//        return "redirect:user/homepage";
     }
 
 //    @GetMapping("/home")
@@ -111,37 +103,46 @@ public class  UserController {
         return "blog";
     }
 
-<<<<<<< HEAD
-    @GetMapping("/homepage")
-    public String Page() {
-        return "homepage";
-=======
-    @GetMapping("/about")
-    public String getAbout() {
-        return "companyProfile";
->>>>>>> dbab59978c59b66597a4783ccfcbdc84c48c41ab
-    }
+//    @GetMapping("/homepage")
+//    public String Page() {
+//        return "homepage";
+//    }
 
-    @GetMapping("/course")
-    public String getCourse() {
-        return "Course";
-    }
-
-
-
+//    @GetMapping("/about")
+//    public String getAbout() {
+//        return "companyProfile";
+//    }
+//
+//
+//
+//
+//
     @GetMapping("/python")
     public String getPython() {
         return "Python";
     }
-    @GetMapping("/quiz")
-    public String getquiz() {
-        return "Quiz_python";
+    @GetMapping("/java")
+    public String getJava() {
+        return "Java";
     }
-    @GetMapping("/userguide")
-    public String getGuide() {
-        return "userguide";
+    @GetMapping("/dart")
+    public String getDart() {
+        return "Dart";
     }
+
+
+//    @GetMapping("/quiz")
+//    public String getquiz() {
+//        return "Quiz_python";
+//    }
+
+//    @GetMapping("/userguide")
+//    public String getGuide() {
+//        return "userguide";
+//    }
+
 }
+
 
 
 

@@ -30,14 +30,21 @@ public class coursecontroller {
     @PostMapping("/save")
     public String saveUser(@Valid CoursePojo coursePojo) {
         courseService.saveUser(coursePojo);
-        return "Course";  // Should make pop for Saved sucessfully
+        return "courseList";  // Should make pop for Saved sucessfully
     }
 
-    @GetMapping("/list")
-    public String getUserList(Model model) {
+    @GetMapping("/list")  //Admin SIde delete and update
+    public String getList(Model model) {
         List<Course> course = courseService.fetchAll();
         model.addAttribute("courseList", course);
         return "courseList";
+    }
+
+    @GetMapping("/course")   //User side course and view
+    public String getCourseList(Model model) {
+        List<Course> course = courseService.fetchAll();
+        model.addAttribute("courseList", course);
+        return "Course";
     }
 
     @GetMapping("/edit/{id}")
