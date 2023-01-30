@@ -8,7 +8,7 @@
     <meta content="Html" name="description" />
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon" />
+    <link th:href="@{~/images/favicon.ico}" rel="icon" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -24,7 +24,7 @@
     />
 
     <!-- Flaticon Font -->
-    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet" />
+    <link th:href="@{~/lib/flaticon/font/flaticon.css}" rel="stylesheet" />
 
     <!-- Libraries Stylesheet -->
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
@@ -34,7 +34,7 @@
     
 
     <!-- Custom Bootstrap Stylesheet -->
-    <link href="../Static/css/style.css" rel="stylesheet" />
+    <link th:href="@{~/css/style.css}" rel="stylesheet" />
   </head>
 
   <body>
@@ -76,6 +76,7 @@
             <a href="contact.html" class="nav-item nav-link">Contact</a>
           </div>
           <a href="" class="btn btn-primary px-4">Profile</a>
+        </div>
 
                 </nav>
     </div>
@@ -89,39 +90,8 @@
          <div class="Vedio">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/xk4_1vDrzzo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
-              
-              <div class="Content">
-                <div class="small-heading gray">
-                  <span><i class="fa fa-circle yellow"></i> </span>
-                  Welcome to the Java course
-                
-              </div>
-              <div class="featured-course-title"> <h3>Gettting started with Java programming for beginners
-                <div class="featured-course-icons-container">
-                  <div class="icons-row">
-                    <div class="icon-heading">
-                      <span><i class="fa fa-check-circle blue"></i></span>
-                      Fundamentals.
-                    </div>
-                    <div class="icon-heading">
-                      <span><i class="fa fa-check-circle blue"></i></span>
-                      OOP'S concept
-                    </div>
-
-                    <div class="icon-heading">
-                      <span><i class="fa fa-check-circle blue"></i></span>
-                      Functionla Programming
-                    </div>
-
-                    <div class="icon-heading">
-                      <span><i class="fa fa-check-circle blue"></i></span>
-                      Game Project
-                    </div>
-                    
-
-                  </div>
-                </div>
-            </h3>
+      </div>
+</section>
             
           </div>
         </div>
@@ -168,9 +138,7 @@
 
 
     <!-- Footer Start -->
-    <div
-      class="container-fluid bg-secondary text-white mt-5 py-0 px-sm-3 px-lg-5"
-    >
+     <div class="container-fluid bg-secondary text-white mt-5 py-0 px-sm-3 px-lg-5">
       <div class="row pt-5">
         <div class="col-lg-3 col-md-6 mb-5">
           <a
@@ -284,7 +252,9 @@
     <a href="#" class="btn btn-primary p-3 back-to-top"
       ><i class="fa fa-angle-double-up"></i
     ></a>
+     </div>
 
+</body>
     
   </head>
   </html>

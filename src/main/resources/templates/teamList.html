@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Email</th>
+        <th>MobileNo</th>
+        <th>userName</th>
+        <th>Field</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="teams:${teamsList}">
+        <td th:text="${teams.firstname}"></td>
+        <td th:text="${teams.lastname}"></td>
+        <td th:text="${teams.email}"></td>
+        <td th:text="${teams.mobileNo}"></td>
+        <td th:text="${teams.userName}"></td>
+        <td th:text="${teams.field}"></td>
+
+
+        <td>
+            <a th:href="@{~/teams/edit/}+${teams.id}">Edit</a> |
+            <a th:href="@{~/teams/delete/}+${teams.id}">Delete</a>
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

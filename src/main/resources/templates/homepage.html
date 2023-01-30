@@ -12,6 +12,8 @@
 
 </head>
 <body>
+
+<form th:method="post" th:object="${home}" th:action="@{/user/home}">
 <!-- Navigation -->
 <div class="container-fluid bg-light position-relative shadow">
     <nav
@@ -226,11 +228,10 @@
     <a href="#" class="btn btn-primary p-3 back-to-top"
     ><i class="fa fa-angle-double-up"></i
     ></a>
-
-
-
-
 </div>
+
+</form>
+
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -243,6 +244,6 @@
         s0.parentNode.insertBefore(s1,s0);
     })();
 </script>
-<!--End of Tawk.to Script-->
+
 </body>
 </html>

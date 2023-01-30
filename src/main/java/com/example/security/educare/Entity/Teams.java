@@ -12,7 +12,6 @@ import org.springframework.security.core.userdetails.UserDetails;
     @NoArgsConstructor
     @Entity
     @Table(name = "teams")
-
     public class Teams{
         @Id
         @SequenceGenerator(name = "gp_user_seq_gen", sequenceName = "gp_user_id_seq", allocationSize = 1)
@@ -37,7 +36,6 @@ import org.springframework.security.core.userdetails.UserDetails;
         @Column(nullable = false)
         private String password;
 
-
-        @Column(name = "mobile_no")
+        @Column(name = "mobile_no", nullable=false)
         private String mobileNo;
 }
