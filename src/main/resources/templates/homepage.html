@@ -63,7 +63,7 @@
             </h3>
             <p>Watch the available videos to learn</p>
             <div class="btn-wrapper">
-                <button th:href = "@{~/user/userguide}" class="UserGuide">UserGuide</button>
+                <button th:onclick="@{~/user/userguide}"  class="UserGuide">UserGuide</button>
             </div>
         </div>
         <div class="img">
@@ -206,7 +206,7 @@
                 <a class="text-white mb-2" href="#"
                 ><i class="fa fa-angle-right mr-2"></i>Contact Us</a
                 >
-                <a class="text-white mb-2" th:href="@{~/faq/list}"
+                <a class="text-white mb-2" th:href="@{~/faq/view}"
                 ><i class="fa fa-angle-right mr-2"></i>FAQ</a
                 >
                 <a class="text-white mb-2 " href="#"

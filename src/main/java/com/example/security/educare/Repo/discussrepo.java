@@ -1,7 +1,7 @@
-package com.system.springboot4.repo;
+package com.example.security.educare.Repo;
 
-import com.system.springboot4.entity.Discuss;
+import com.example.security.educare.Entity.Discuss;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface discussrepo extends JpaRepository<Discuss ,Integer> {
+public interface discussrepo extends JpaRepository<Discuss,Integer> {
 }

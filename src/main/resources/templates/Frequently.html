@@ -37,7 +37,7 @@
 <tbody>
 <div class="questions-container">
  <div class="question">
-    <tr th:each="faq:${frequentList}">
+    <tr th:each="faq:${faqlist}">
     <button>
         <span><td th:text="${faq.question}"></td></span>
         <i class="fas fa-chevron-down d-arrow"></i>

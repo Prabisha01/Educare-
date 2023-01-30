@@ -2,10 +2,13 @@
     package com.example.security.educare.Services.Impl;
 
     import com.example.security.educare.Entity.Contact;
+    import com.example.security.educare.Entity.Faq;
     import com.example.security.educare.Entity.User;
     import com.example.security.educare.Pojo.BlogPojo;
     import com.example.security.educare.Pojo.ContactPojo;
+    import com.example.security.educare.Pojo.FaqPojo;
     import com.example.security.educare.Repo.ContactRepo;
+    import com.example.security.educare.Repo.FaqRepo;
     import com.example.security.educare.Repo.UserRepo;
     import com.example.security.educare.Services.UserService;
     import com.example.security.educare.Pojo.UserPojo;
@@ -26,6 +29,7 @@
     public class UserServiceImpl implements UserService {
         public final ContactRepo contactRepo;
         public final UserRepo userRepo;
+        public final FaqRepo faqRepo;
 
 
 
@@ -67,14 +71,28 @@
             contact.setSubject(contactPojo.getSubject());
             contact.setMessage(contactPojo.getMessage());
             contactRepo.save(contact);
-            return "submit";
+            return null;
         }
-
 
         @Override
         public void deleteById(Integer id) {
-            userRepo.deleteById(id);
+
         }
+
+
+        public String save(FaqPojo faqPojo) {
+            Faq faq =new Faq();
+            if(faqPojo.getId()!=null){
+                faq.setId(faqPojo.getId());
+            }
+            faq.setId(faqPojo.getId());
+            faq.setQuestion(faqPojo.getQuestion());
+            faq.setAnswer(faqPojo.getAnswer());
+            faqRepo.save(faq);
+            return null;
+        }
+
+
 
         @Override
         public UserPojo findByUserName(String user_name) {
@@ -88,6 +106,7 @@
             return null;
         }
 
+
         @Override
         public UserPojo findByEmail(String email) {
             return null;
@@ -98,8 +117,24 @@
             return null;
         }
 
-
+        @Override
+        public List<Contact> fetchAllContact() {
+            return this.contactRepo.findAll();
         }
+
+        @Override
+        public Contact CfetchById(Integer id) {
+            return contactRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
+        }
+
+        @Override
+        public void CdeleteById(Integer id) {
+            contactRepo.deleteById(id);
+        }
+
+
+    }
+
 
 
 

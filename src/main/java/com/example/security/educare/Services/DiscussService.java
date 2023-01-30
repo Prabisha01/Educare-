@@ -1,8 +1,7 @@
-package com.system.springboot4.services;
+package com.example.security.educare.Services;
 
-import com.system.springboot4.entity.Discuss;
-import com.system.springboot4.pojo.UserPojo;
-import com.system.springboot4.pojo.discuss;
+import com.example.security.educare.Entity.Discuss;
+import com.example.security.educare.Pojo.discuss;
 
 import java.util.List;
 

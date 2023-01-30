@@ -19,7 +19,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BlogServicesImpl implements BlogServices {
     private final BlogRepo blogRepo;
-    public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/educareimage/";
+    public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/FinalEducareProject/educareimage/";
 
 
     @Override
@@ -35,14 +35,14 @@ public class BlogServicesImpl implements BlogServices {
         blog.setDate(blogPojo.getDate());
         blog.setContent(blog.getContent());
 
-        if(blogPojo.getImg()!=null){
+        if(blogPojo.getImage()!=null){
             StringBuilder fileNames = new StringBuilder();
             System.out.println(UPLOAD_DIRECTORY);
-            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, blogPojo.getImg().getOriginalFilename());
-            fileNames.append(blogPojo.getImg().getOriginalFilename());
-            Files.write(fileNameAndPath, blogPojo.getImg().getBytes());
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, blogPojo.getImage().getOriginalFilename());
+            fileNames.append(blogPojo.getImage().getOriginalFilename());
+            Files.write(fileNameAndPath, blogPojo.getImage().getBytes());
 
-            blog.setImage(blogPojo.getImg().getOriginalFilename());
+            blog.setImage(blogPojo.getImage().getOriginalFilename());
         }
         blogRepo.save(blog);
         return new BlogPojo(blog);

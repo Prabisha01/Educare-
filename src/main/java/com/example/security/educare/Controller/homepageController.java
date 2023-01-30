@@ -36,6 +36,7 @@ public class homepageController {
         model.addAttribute("blog", new BlogPojo());
         return "blog";
     }
+
     @GetMapping("/course")
     public String getCourse() {
         return "Course";

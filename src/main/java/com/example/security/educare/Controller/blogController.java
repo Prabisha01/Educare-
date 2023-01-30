@@ -53,7 +53,7 @@ public class blogController {
         blogServices.save(blogPojo);
         redirectAttributes.addFlashAttribute("successMsg", "Image saved successfully");
 
-        return "redirect:/blog/list";
+        return "redirect:/blog/addBlog";
     }
 
     @GetMapping("/list")
@@ -89,17 +89,16 @@ public class blogController {
     }
 
     public String getImageBase64(String fileName) {
-        String filePath = System.getProperty("user.dir") + "/educareimage/";
+        String filePath = System.getProperty("user.dir") + "/FinalEducareProject/educareimage/";
         File file = new File(filePath + fileName);
-        byte[] bytes = new byte[0];
+        byte[] bytes ;
         try {
             bytes = Files.readAllBytes(file.toPath());
         } catch (IOException e) {
             e.printStackTrace();
             return null;
         }
-        String base64 = Base64.getEncoder().encodeToString(bytes);
-        return base64;
+        return Base64.getEncoder().encodeToString(bytes);
     }
 
 

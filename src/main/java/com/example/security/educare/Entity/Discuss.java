@@ -1,4 +1,5 @@
-package com.system.springboot4.entity;
+package com.example.security.educare.Entity;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -89,7 +89,7 @@
     <div class="post container">
         <div class="post-box tech">
             <tr th:each="blog:${blogList}">
-<!--            <img  th:src="'data:image/png;base64,'+${blog.imageBase64}" />-->
+            <img  th:src="'data:image/png;base64,'+${blog.imageBase64}" />
             <a href="#" class="post-title"  th:text="${blog.title}" ></a>
             <span class="post-date" th:text="${blog.date}" ></span>
             <p class="post-description"th:text="${blog.content}"></p>

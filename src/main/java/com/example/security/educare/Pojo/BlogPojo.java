@@ -18,7 +18,7 @@ public class BlogPojo {
     private  String date;
     private  String phoneNum;
     private  String content;
-   private MultipartFile img;
+   private MultipartFile image;
 
 
     public BlogPojo(Blog blog) {

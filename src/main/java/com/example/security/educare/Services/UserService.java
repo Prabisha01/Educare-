@@ -1,16 +1,21 @@
 package com.example.security.educare.Services;
 
 
+import com.example.security.educare.Entity.Contact;
+import com.example.security.educare.Entity.Faq;
 import com.example.security.educare.Entity.User;
 import com.example.security.educare.Pojo.BlogPojo;
 import com.example.security.educare.Pojo.ContactPojo;
+import com.example.security.educare.Pojo.FaqPojo;
 import com.example.security.educare.Pojo.UserPojo;
 
 
 import java.util.List;
 
 public interface UserService {
-    User fetchById(Integer id) ;
+
+
+    abstract User fetchById(Integer id);
 
     String saveUser(UserPojo userPojo);
     List<User> fetchAll();
@@ -23,9 +28,14 @@ public interface UserService {
     String save(BlogPojo blogPojo);
 
 
+    String save(FaqPojo faqPojo);
+
     UserPojo findByEmail(String email);
 
     UserPojo findByPassword(String password);
 
+    List<Contact> fetchAllContact();
 
+    Contact CfetchById(Integer id);
+    void CdeleteById(Integer id);
 }

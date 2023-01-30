@@ -218,7 +218,7 @@ nav .navbar li a:hover{
     color: white;
 } */
 .btn-wrapper{
-    margin: 50px 0 0;
+    margin: 20px 0 0;
 }
 .join-free{
     font-size: 16px;
@@ -229,14 +229,18 @@ nav .navbar li a:hover{
     padding: 5px 15px;
     display: block;
 }
+.btn-1{
+    border-bottom-color: #0c5460;
+}
 .UserGuide{
     font-size: 16px;
     color: white;
     background-color: #317193;
     border: 1px solid #317193;
     border-radius: 1000px;
-    padding: 5px 15px;
+    padding: 5px 5px;
     display: block;
+    border: #d9dae0;
 }
 /* section 3 */
 .with-edu{

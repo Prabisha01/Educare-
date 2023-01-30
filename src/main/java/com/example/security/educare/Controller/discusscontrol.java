@@ -1,8 +1,8 @@
-package com.system.springboot4.controller;
+package com.example.security.educare.Controller;
 
-import com.system.springboot4.entity.Discuss;
-import com.system.springboot4.pojo.discuss;
-import com.system.springboot4.services.DiscussService;
+import com.example.security.educare.Entity.Discuss;
+import com.example.security.educare.Pojo.discuss;
+import com.example.security.educare.Services.DiscussService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
@@ -25,7 +25,7 @@ public class discusscontrol {
         discussService.saveUser(discuss);
         List<Discuss> discuss1 = discussService.fetchall();
         model.addAttribute("messageList", discuss1);
-        return "/User/discussion";
+        return "/student/discussion";
     }
 
     @GetMapping("/list")
@@ -33,7 +33,7 @@ public class discusscontrol {
         model.addAttribute("discuss",new discuss());
         List<Discuss> discuss = discussService.fetchall();
         model.addAttribute("messageList", discuss);
-        return "/User/discussion";
+        return "/student/discussion";
 
     }
 }

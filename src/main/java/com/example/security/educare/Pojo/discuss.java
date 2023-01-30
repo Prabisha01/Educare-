@@ -1,6 +1,6 @@
-package com.system.springboot4.pojo;
-import com.system.springboot4.entity.Discuss;
-import com.system.springboot4.entity.User;
+package com.example.security.educare.Pojo;
+
+import com.example.security.educare.Entity.Discuss;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

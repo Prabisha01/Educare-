@@ -1,7 +1,9 @@
 package com.example.security.educare.Controller;
+import com.example.security.educare.Entity.Contact;
 import com.example.security.educare.Entity.User;
 import com.example.security.educare.Pojo.BlogPojo;
 import com.example.security.educare.Pojo.ContactPojo;
+import com.example.security.educare.Pojo.FaqPojo;
 import com.example.security.educare.Services.UserService;
 
 import com.example.security.educare.Pojo.UserPojo;
@@ -27,6 +29,7 @@ import java.util.List;
 public class UserController {
     private final UserService userService;
     private final ValidationAutoConfiguration validationAutoConfiguration;
+
 
     @GetMapping("/homepage")
     public String homePage() {
@@ -81,14 +84,16 @@ public class UserController {
     @PostMapping("/send-message")
     public String submitMessage(@Valid ContactPojo contactPojo) {
         userService.submitMsg(contactPojo);
-        return "redirect:contact";
+        return "redirect:/user/Contact";
     }
+
 
     @GetMapping("/viewBlog")
     public String viewUserBlog(Model model) {
         model.addAttribute("blog", new BlogPojo());
         return "blog";
     }
+
 
     @GetMapping("/about")
     public String getAbout() {
@@ -111,6 +116,7 @@ public class UserController {
     @GetMapping("/userguide")
     public String getGuide() {
         return "userguide";
+
     }
 }
 
