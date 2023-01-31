@@ -1,6 +1,7 @@
 package com.example.security.educare;
 
 
+import com.example.security.educare.Entity.Faq;
 import com.example.security.educare.Entity.User;
 import com.example.security.educare.Repo.UserRepo;
 import org.assertj.core.api.Assertions;
@@ -29,5 +30,15 @@ public class UserRepositoryTest {
         Assertions.assertThat(user.getId()).isGreaterThan(0);
 
     }
-
+    @Test
+    @Order(2)
+    public void getUserTest(){
+        User user=User.builder()
+                .userName("tulasi")
+                .password("1234")
+                .build();
+        userRepo.save(user);
+        User userCreated = userRepo.findById(user.getId()).get();
+        Assertions.assertThat(user.getId()).isEqualTo(userCreated.getId());
+    }
 }
