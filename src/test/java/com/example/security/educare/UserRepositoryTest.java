@@ -34,7 +34,7 @@ public class UserRepositoryTest {
     @Order(2)
     public void getUserTest(){
         User user=User.builder()
-                .userName("tulasi")
+                .userName("salini")
                 .password("1234")
                 .build();
         userRepo.save(user);
