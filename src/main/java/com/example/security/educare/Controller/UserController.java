@@ -80,7 +80,10 @@ public class  UserController {
 
 
     @GetMapping("/contact")
-    public String getPage(Model model) {
+    public String getPage(Model model, Principal principal) {
+        if (principal != null) {
+            model.addAttribute("prof", userService.findByEmail(principal.getName()));
+        }
         model.addAttribute("contact", new ContactPojo());
         return "Contact";
     }
@@ -99,6 +102,20 @@ public class  UserController {
         return "/login";
     }
 
+    @GetMapping("/profile/{id}")
+    public String getUserProfile(@PathVariable("id") Integer id, Model model) {
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+            return "login";
+        }
+        User user = userService.fetchById(id);
+
+        model.addAttribute("user", new UserPojo(user));
+        model.addAttribute("prof", user);
+
+        return "update";
+    }
 
 
     @GetMapping("/about")

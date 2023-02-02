@@ -6,6 +6,7 @@ import com.example.security.educare.Pojo.BlogPojo;
 import com.example.security.educare.Pojo.FaqPojo;
 import com.example.security.educare.Services.BlogServices;
 import com.example.security.educare.Services.FaqServices;
+import com.example.security.educare.Services.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.security.Principal;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
@@ -32,7 +34,7 @@ import java.util.Map;
 @RequestMapping("/blog")
 public class blogController {
   private  final BlogServices blogServices;
-
+    private  final UserService userServices;
 
     @GetMapping("/addBlog")
     public String createBlog(Model model) {
@@ -75,7 +77,10 @@ public class blogController {
     }
 
     @GetMapping("/view")
-    public String getViewList(Model model) {
+    public String getViewList(Model model , Principal principal) {
+        if (principal != null) {
+            model.addAttribute("prof", userServices.findByEmail(principal.getName()));
+        }
         List<Blog> blogs = blogServices.fetchAll();
         model.addAttribute("bloglist", blogs.stream().map(blog ->
         Blog.builder()

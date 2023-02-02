@@ -76,7 +76,8 @@
 					</div>
 				</div>
 			</div>
-			<a href="" class="btn btn-primary px-4">Profile</a>
+			<a th:if="${prof!=null} "th:href="@{/user/profile/} + ${prof.id}" > <span th:text ="${prof.getUsername}" ></span></a></li>
+			<a th:if="${prof==null}" th:href="@{/user/profile/}"></i> Login</a></li>
 		</div>
 
 	</nav>
