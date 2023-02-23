@@ -21,3 +21,4 @@ public class eventpojo {
         this.content=event.getTitle();
     }
 }
+
