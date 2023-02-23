@@ -1,4 +1,5 @@
-package com.system.springboot4.entity;
+package com.example.security.educare.Entity;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,7 +16,7 @@ public class event {
     @Id
     @SequenceGenerator(name = "cms_user_seq_gen", sequenceName = "cms_user_id_seq", allocationSize = 1)
     @GeneratedValue(generator = "cms_user_seq_gen", strategy = GenerationType.SEQUENCE)
-    private Integer eventid;
+    private Integer id;
 
     @Column(nullable = false)
     private String date;
