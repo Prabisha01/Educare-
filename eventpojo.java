@@ -1,6 +1,7 @@
-package com.system.springboot4.pojo;
+package com.example.security.educare.Pojo;
 
-import com.system.springboot4.entity.event;
+
+import com.example.security.educare.Entity.event;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,11 +12,11 @@ import lombok.Setter;
 @NoArgsConstructor // dynamic banaunw duitai pass gareko
 @AllArgsConstructor
 public class eventpojo {
-    private Integer eventid;
+    private Integer id;
     private String date;
     private  String content;
     public eventpojo(event event){
-        this.eventid=event.getEventid();
+        this.id=event.getId();
         this.date=event.getDate();
         this.content=event.getTitle();
     }
