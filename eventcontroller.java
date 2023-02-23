@@ -1,23 +1,19 @@
-package com.system.springboot4.controller;
-import com.system.springboot4.entity.User;
-import com.system.springboot4.entity.event;
-import com.system.springboot4.pojo.UserPojo;
-import com.system.springboot4.pojo.eventpojo;
-import com.system.springboot4.repo.UserRepo;
-import com.system.springboot4.services.UserService;
-import com.system.springboot4.services.eventservice;
+package com.example.security.educare.Controller;
+
+
+import com.example.security.educare.Entity.event;
+import com.example.security.educare.Pojo.eventpojo;
+import com.example.security.educare.Services.eventservice;
 import jakarta.validation.Valid;
-import lombok.NoArgsConstructor;
+
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 @Controller
@@ -28,23 +24,26 @@ public class eventcontroller {
     @GetMapping("/event")
     public String createUser(Model model) {
         model.addAttribute("obj",new eventpojo());
-        System.out.println("eventcontroller");
         return "User/event";
-
     }
     @PostMapping("/save")
-    public String saveUser(@Valid eventpojo eventpojo,Model model) {
+    public String saveUser(@Valid eventpojo eventpojo, Model model) {
         eventservice.saveUser(eventpojo);
-        model.addAttribute("obj",new eventpojo());
-        System.out.println("usercontroller5");
-        return "User/event"; // router ko path
+        return "redirect:/event/event"; // router ko path
     }
-    @GetMapping("/update")
-    public String getUserList(Model model) {
-        List<event> event = eventservice.fetchAll();
-        model.addAttribute("eventList", event);
-        System.out.println("usercontroller2");
-        return ("/User/index");
 
+    @GetMapping("/update/{id}")
+    public String getUserList( @PathVariable("id") Integer id,Model model) {
+        event event = eventservice.fetchById(id);
+        model.addAttribute("obj",new eventpojo(event));
+        return "User/editevent";
+    }
+
+
+    @GetMapping("/delete/{id}")
+    public String deleteuser(@PathVariable("id") Integer id){
+        System.out.println("delete");
+        eventservice.deleteById(id);
+        return "redirect:/event/event";
     }
 }
