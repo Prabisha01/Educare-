@@ -1,17 +1,19 @@
-package com.system.springboot4.controller;
+package com.example.security.educare.Controller;
 
-import com.system.springboot4.entity.Discuss;
-import com.system.springboot4.pojo.discuss;
-import com.system.springboot4.services.DiscussService;
+
+import com.example.security.educare.Entity.Discuss;
+import com.example.security.educare.Pojo.discuss;
+import com.example.security.educare.Services.DiscussService;
+import com.example.security.educare.Services.UserService;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -19,21 +21,21 @@ import java.util.List;
 @RequestMapping("/student")
 public class discusscontrol {
     private final DiscussService discussService;
+    private final UserService userService;
 
     @GetMapping("/save")
-    public String saveUser(Model model, @Valid discuss discuss ) {
+    public String saveUser(Principal principal, @Valid discuss discuss ) {
+        discuss.setName1(userService.findByUsername(principal.getName()).getUserName());
         discussService.saveUser(discuss);
-        List<Discuss> discuss1 = discussService.fetchall();
-        model.addAttribute("messageList", discuss1);
-        return "/User/discussion";
+        return "redirect:/student/list";
     }
 
     @GetMapping("/list")
-    public String getUserList(Model model) {
+    public String getUserList(Model model, Principal principal) {
         model.addAttribute("discuss",new discuss());
         List<Discuss> discuss = discussService.fetchall();
+//        model.addAttribute("logged",userService.findByUsername(principal.getName()));
         model.addAttribute("messageList", discuss);
-        return "/User/discussion";
-
+        return "discussion";
     }
 }
