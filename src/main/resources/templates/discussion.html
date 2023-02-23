@@ -6,35 +6,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Discussion Board</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      margin-top: 30px;
+      border-radius: 10px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: #212529;
+    }
+
+    #post {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    #post:hover {
+      background-color: #0069d9;
+      border-color: #0062cc;
+    }
+
+    .card {
+      background-color: #f8f9fa;
+      margin-bottom: 20px;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
 <div class="container">
-  <h1 class="text-center">Discussion Board</h1>
+  <h1 class="text-center text-primary mb-4">Discussion Board</h1>
 
   <form th:action="@{/student/save}" th:object="${discuss}">
     <div class="form-group">
-      <label >Topic:</label>
+      <label  class="font-weight-bold">Topic: Cinema hall inside college</label>
+      <input type="text" hidden th:field="*{id}">
     </div>
     <div class="form-group">
-      <input type="text" hidden placeholder="UserId..." th:field="*{id}" th:value="${discuss.id}" >
-      <label for="message"   >Message:</label>
-      <textarea class="form-control" id="message" th:field="*{message}" th:value="${discuss.message}" name="message" rows="3" required></textarea>
+      <label for="message" class="font-weight-bold">Message:</label>
+      <textarea class="form-control" id="message" th:field="*{message}" name="message" rows="3" required></textarea>
     </div>
-    <button type="submit" id="post" class="btn btn-primary" onclick="clear()">Post</button>
+    <button type="submit" id="post" class="btn btn-primary">Post</button>
   </form>
 
-  <h2>Threads</h2>
+  <h2 class="mt-5 mb-4"></h2>
 
-  <div class="card mb-3" th:each="discuss:${messageList}" >
-    <div class="card-body" >
-      <h5 class="card-title" >Thread Title</h5>
+  <div class="card" th:each="discuss:${messageList}">
+    <div class="card-body">
+      <h5 class="card-title font-weight-bold mb-3" th:text="${discuss.name1}"></h5>
       <p class="card-text" th:text="${discuss.message}"></p>
     </div>
   </div>
 
-
 </div>
-<script >
+
+<script>
   function clear() {
     let data = document.getElementById("message").value;
     alert(data);
