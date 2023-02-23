@@ -1,23 +1,25 @@
-package com.system.springboot4.entity;
-import jakarta.persistence.*;
+package com.example.security.educare.Pojo;
+import com.example.security.educare.Entity.Discuss;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
+
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "discuss")
-public class Discuss {
-    @Id
-    @SequenceGenerator(name = "cms_user_seq_gen", sequenceName = "cms_user_id_seq", allocationSize = 1)
-    @GeneratedValue(generator = "cms_user_seq_gen", strategy = GenerationType.SEQUENCE)
-    private Integer id;
+@AllArgsConstructor
 
-    @Column(nullable = false)
+public class discuss {
+    private int id;
     private String message;
-
+    private String name1;
+    public discuss(Discuss discuss1){
+        this.id=discuss1.getId();
+        this.message=discuss1.getMessage();
+        this.name1=discuss1.getName1();
+        
+    }
 }
